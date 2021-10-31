@@ -2,11 +2,13 @@ package pe.edu.upc.raze.consultancies.api;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.consultancies.domain.services.OutfitService;
 import pe.edu.upc.raze.consultancies.mapping.OutfitMapper;
 import pe.edu.upc.raze.consultancies.resource.CreateOutfitResource;
 import pe.edu.upc.raze.consultancies.resource.OutfitResource;
+import pe.edu.upc.raze.consultancies.resource.UpdateOutfitResource;
 
 import java.util.List;
 
@@ -29,7 +31,7 @@ public class OutfitController {
         return outfitsResource;
     }
 
-    @GetMapping("outfitId")
+    @GetMapping("{outfitId}")
     public OutfitResource GetOutfitById(@PathVariable Long outfitId){
 
         var outfitResource = outfitMapper.toResource(outfitService.GetById(outfitId));
@@ -40,8 +42,20 @@ public class OutfitController {
     public  OutfitResource CreateOutfit(@RequestBody CreateOutfitResource request){
         var outfit = outfitMapper.toModel(request);
 
-        var outfitResource=outfitMapper.toResource(outfitService.Create(outfit));
+        var outfitCreated = outfitService.Create(outfit);
 
-        return outfitMapper.toResource(outfit);
+        var outfitResource=outfitMapper.toResource(outfitCreated);
+
+        return outfitResource;
+    }
+
+    @PutMapping("{outfitId}")
+    public OutfitResource updateOutfit(@PathVariable Long outfitId, @RequestBody UpdateOutfitResource request){
+        return outfitMapper.toResource(outfitService.Update(outfitId,outfitMapper.toModel(request)));
+    }
+
+    @DeleteMapping("{outfitId}")
+    public ResponseEntity<?> deleteOutfit(@PathVariable Long outfitId){
+        return outfitService.Delete(outfitId);
     }
 }

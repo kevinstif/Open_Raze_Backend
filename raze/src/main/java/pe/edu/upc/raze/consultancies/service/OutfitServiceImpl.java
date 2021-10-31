@@ -41,7 +41,7 @@ public class OutfitServiceImpl implements OutfitService {
 
         Set<ConstraintViolation<Outfit>> violations= validator.validate(request);
 
-        if (!violations.isEmpty())
+         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY,violations);
 
         return outfitRepository.save(request);

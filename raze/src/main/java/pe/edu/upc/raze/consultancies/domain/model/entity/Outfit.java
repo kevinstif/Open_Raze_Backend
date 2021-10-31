@@ -1,7 +1,7 @@
 package pe.edu.upc.raze.consultancies.domain.model.entity;
 
-import lombok.*;
 import pe.edu.upc.raze.shared.domain.model.AuditModel;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "outfits")
 
-public class Outfit extends AuditModel {
+public class Outfit{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
