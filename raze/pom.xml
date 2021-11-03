@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.6</version>
+		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pe.edu.upc</groupId>
@@ -14,7 +14,7 @@
 	<name>raze</name>
 	<description>raze project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>15</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -29,7 +29,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -52,9 +51,14 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>2.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.modelmapper.extensions</groupId>
+			<artifactId>modelmapper-spring</artifactId>
+			<version>2.4.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.modelmapper.extensions</groupId>
