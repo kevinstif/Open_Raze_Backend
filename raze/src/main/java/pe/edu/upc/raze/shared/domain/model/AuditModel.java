@@ -19,12 +19,12 @@ import java.util.Date;
 public abstract class AuditModel implements Serializable {
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at", insertable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     @CreatedDate
     private Date createdAt;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_at", insertable = false)
+    @Column(name = "updated_at", nullable = false)
     @LastModifiedDate
     private Date updatedAt;
 }
