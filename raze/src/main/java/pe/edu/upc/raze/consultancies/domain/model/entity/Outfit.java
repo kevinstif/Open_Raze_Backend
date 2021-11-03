@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "outfits")
 
-public class Outfit{
+public class Outfit extends AuditModel{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
