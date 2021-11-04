@@ -8,4 +8,5 @@ public class MappingConfiguration {
 
     @Bean
     public OutfitMapper outfitMapper(){return new OutfitMapper();}
+    public OutfiTypeMapper outfitypeMapper(){return new OutfiTypeMapper();}
 }
