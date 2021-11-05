@@ -1,7 +1,7 @@
-package pe.edu.upc.raze.consultancies.domain.services;
+package pe.edu.upc.raze.consultancies.outfits.domain.services;
 
 import org.springframework.http.ResponseEntity;
-import pe.edu.upc.raze.consultancies.domain.model.entity.Outfit;
+import pe.edu.upc.raze.consultancies.outfits.domain.model.entity.Outfit;
 
 import java.util.List;
 

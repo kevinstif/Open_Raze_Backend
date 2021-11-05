@@ -1,16 +1,14 @@
-package pe.edu.upc.raze.consultancies.api;
+package pe.edu.upc.raze.consultancies.outfits.api;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.raze.consultancies.domain.services.OutfitService;
-import pe.edu.upc.raze.consultancies.mapping.OutfitMapper;
-import pe.edu.upc.raze.consultancies.resource.CreateOutfitResource;
-import pe.edu.upc.raze.consultancies.resource.OutfitResource;
-import pe.edu.upc.raze.consultancies.resource.UpdateOutfitResource;
-
-import java.util.List;
+import pe.edu.upc.raze.consultancies.outfits.domain.services.OutfitService;
+import pe.edu.upc.raze.consultancies.outfits.mapping.OutfitMapper;
+import pe.edu.upc.raze.consultancies.outfits.resource.CreateOutfitResource;
+import pe.edu.upc.raze.consultancies.outfits.resource.OutfitResource;
+import pe.edu.upc.raze.consultancies.outfits.resource.UpdateOutfitResource;
 
 @RestController
 @RequestMapping("/api/v1/outfits")

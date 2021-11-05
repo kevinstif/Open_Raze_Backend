@@ -1,4 +1,4 @@
-package pe.edu.upc.raze.consultancies.domain.model.entity;
+package pe.edu.upc.raze.consultancies.outfits.domain.model.entity;
 
 import pe.edu.upc.raze.shared.domain.model.AuditModel;
 import lombok.*;
