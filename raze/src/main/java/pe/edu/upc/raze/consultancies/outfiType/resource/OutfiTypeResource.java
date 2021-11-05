@@ -1,4 +1,4 @@
-package pe.edu.upc.raze.consultancies.resource;
+package pe.edu.upc.raze.consultancies.outfiType.resource;
 
 import lombok.Getter;
 import lombok.Setter;

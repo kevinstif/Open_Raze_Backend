@@ -1,16 +1,14 @@
-package pe.edu.upc.raze.consultancies.api;
+package pe.edu.upc.raze.consultancies.outfiType.api;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.raze.consultancies.domain.services.OutfiTypeService;
-import pe.edu.upc.raze.consultancies.mapping.OutfiTypeMapper;
-import pe.edu.upc.raze.consultancies.resource.CreateOutfiTypeResource;
-import pe.edu.upc.raze.consultancies.resource.OutfiTypeResource;
-import pe.edu.upc.raze.consultancies.resource.UpdateOutfiTypeResource;
-
-import java.util.List;
+import pe.edu.upc.raze.consultancies.outfiType.domain.services.OutfiTypeService;
+import pe.edu.upc.raze.consultancies.outfiType.mapping.OutfiTypeMapper;
+import pe.edu.upc.raze.consultancies.outfiType.resource.CreateOutfiTypeResource;
+import pe.edu.upc.raze.consultancies.outfiType.resource.OutfiTypeResource;
+import pe.edu.upc.raze.consultancies.outfiType.resource.UpdateOutfiTypeResource;
 
 @RestController
 @RequestMapping("/api/v1/outfiTypes")

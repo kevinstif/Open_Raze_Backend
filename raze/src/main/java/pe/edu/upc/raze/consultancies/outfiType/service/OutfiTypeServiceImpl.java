@@ -1,10 +1,10 @@
-package pe.edu.upc.raze.consultancies.service;
+package pe.edu.upc.raze.consultancies.outfiType.service;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.raze.consultancies.domain.model.entity.OutfiType;
-import pe.edu.upc.raze.consultancies.domain.persistence.OutfiTypeRepository;
-import pe.edu.upc.raze.consultancies.domain.services.OutfiTypeService;
+import pe.edu.upc.raze.consultancies.outfiType.domain.model.entity.OutfiType;
+import pe.edu.upc.raze.consultancies.outfiType.domain.persistence.OutfiTypeRepository;
+import pe.edu.upc.raze.consultancies.outfiType.domain.services.OutfiTypeService;
 import pe.edu.upc.raze.shared.exception.ResourceNotFoundException;
 import pe.edu.upc.raze.shared.exception.ResourceValidationException;
 

@@ -1,4 +1,4 @@
-package pe.edu.upc.raze.consultancies.resource;
+package pe.edu.upc.raze.consultancies.outfiType.resource;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,10 +8,12 @@ import javax.validation.constraints.Size;
 
 @Getter
 @Setter
-public class CreateOutfiTypeResource {
+public class UpdateOutfiTypeResource {
+
+    private Long id;
 
     @NotNull
-    @Size(max = 20)
+    @Size(max = 30)
     private String name;
 
     @NotNull
