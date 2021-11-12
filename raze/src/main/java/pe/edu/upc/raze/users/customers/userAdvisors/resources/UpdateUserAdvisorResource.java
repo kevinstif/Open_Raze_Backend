@@ -1,12 +1,10 @@
-package pe.edu.upc.raze.users.customers.userAdvised.resources;
-
+package pe.edu.upc.raze.users.customers.userAdvisors.resources;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class UpdateUserAdvisedResource {
-
+public class UpdateUserAdvisorResource {
     private Long id;
 
     @NotNull
@@ -33,7 +31,5 @@ public class UpdateUserAdvisedResource {
     private Boolean premium;
 
     @NotNull
-    private Long mood;
-
-
+    private Long yearsExperience;
 }

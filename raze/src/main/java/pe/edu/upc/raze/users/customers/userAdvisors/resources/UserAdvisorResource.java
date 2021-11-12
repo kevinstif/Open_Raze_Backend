@@ -1,6 +1,6 @@
-package pe.edu.upc.raze.users.customers.userAdvised.resources;
+package pe.edu.upc.raze.users.customers.userAdvisors.resources;
 
-public class UserAdvisedResource {
+public class UserAdvisorResource {
     private Long id;
     private String firstName;
     private String lastName;
@@ -8,5 +8,5 @@ public class UserAdvisedResource {
     private String password;
     private Long age;
     private Boolean premium;
-    private Long mood;
+    private Long yearExperience;
 }

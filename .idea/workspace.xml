@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58ebbf2e-bb4d-44cb-8db6-e32e1eae8ea1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/api/UserAdvisedsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/domain/model/entity/UserAdvised.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/domain/persistence/UserAdvisedRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/domain/services/UserAdvisedService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/mapping/MappingConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/mapping/UserAdvisedMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/CreateUserAdvisedResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/UpdateUserAdvisedResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/service/UserAdvisedServicelmpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfiType/api/OutfiTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfiType/api/OutfiTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfiType/service/OutfiTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfiType/service/OutfiTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfits/api/OutfitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfits/api/OutfitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfits/domain/model/entity/Outfit.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfits/domain/model/entity/Outfit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfits/service/OutfitServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/consultancies/outfits/service/OutfitServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raze/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/api/UserAdvisorsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/domain/model/entity/UserAdvisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/domain/persistence/UserAdvisorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/domain/services/UserAdvisorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/mapping/MappingConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/mapping/UserAdvisorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/CreateUserAdvisorResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/UpdateUserAdvisorResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/UserAdvisorResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/service/UserAdvisorServicelmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/domain/model/entity/UserAdvised.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/domain/model/entity/UserAdvised.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/CreateUserAdvisedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/CreateUserAdvisedResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/UpdateUserAdvisedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/UpdateUserAdvisedResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/UserAdvisedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/UserAdvisedResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/service/UserAdvisedServicelmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/service/UserAdvisedServicelmpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +82,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="JAVA" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -91,6 +90,11 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jesus\Documents\GitHub\Open_Raze_Backend\raze\src\main\java\pe\edu\upc\raze\users\customers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
@@ -121,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636662480629</updated>
       <workItem from="1636662480645" duration="2771000" />
-      <workItem from="1636669542634" duration="10475000" />
+      <workItem from="1636669542634" duration="13638000" />
     </task>
     <servers />
   </component>

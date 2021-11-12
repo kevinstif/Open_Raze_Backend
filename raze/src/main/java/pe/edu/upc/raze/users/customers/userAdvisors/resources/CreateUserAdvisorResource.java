@@ -1,4 +1,5 @@
-package pe.edu.upc.raze.users.customers.userAdvised.resources;
+package pe.edu.upc.raze.users.customers.userAdvisors.resources;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,10 +9,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
 @Getter
 @Setter
-public class CreateUserAdvisedResource {
+public class CreateUserAdvisorResource {
 
     @NotNull
     @NotBlank
@@ -46,7 +46,5 @@ public class CreateUserAdvisedResource {
     @NotNull
     @NotBlank
     @Column(unique = true)
-    private Long mood;
-
-
+    private Long yearExperience;
 }
