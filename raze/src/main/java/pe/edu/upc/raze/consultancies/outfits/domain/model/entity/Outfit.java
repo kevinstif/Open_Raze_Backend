@@ -15,7 +15,6 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @Entity
 @Table(name = "outfits")
-
 public class Outfit extends AuditModel{
 
     @Id
