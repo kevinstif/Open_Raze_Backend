@@ -1,7 +1,5 @@
 package pe.edu.upc.raze.users.customers.userAdvised.api;
 
-
-import lombok.var;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -26,28 +24,19 @@ public class UserAdvisedsController
 
     @GetMapping
     public Page<UserAdvisedResource> GetAllUserAdviseds(Pageable pageable){
-
-
-        var userAdvisedsResource = userAdvisedMapper.modelListToPage(userAdvisedService.GetAll(),pageable);
-        return userAdvisedsResource;
+        return userAdvisedMapper.modelListToPage(userAdvisedService.GetAll(),pageable);
     }
 
     @GetMapping("{userAdvisedId}")
     public UserAdvisedResource GetUserAdvisedById(@PathVariable Long userAdvisedId){
-
-        var userAdvisedResource = userAdvisedMapper.toResource(userAdvisedService.GetById(userAdvisedId));
-        return userAdvisedResource;
+        return userAdvisedMapper.toResource(userAdvisedService.GetById(userAdvisedId));
     }
 
     @PostMapping
     public  UserAdvisedResource CreateUserAdvised(@RequestBody CreateUserAdvisedResource request){
         var userAdvised = userAdvisedMapper.toModel(request);
-
         var userAdvisedCreated = userAdvisedService.Create(userAdvised);
-
-        var userAdvisedResource=userAdvisedMapper.toResource(userAdvisedCreated);
-
-        return userAdvisedResource;
+        return userAdvisedMapper.toResource(userAdvisedCreated);
     }
 
     @PutMapping("{userAdvisedId}")

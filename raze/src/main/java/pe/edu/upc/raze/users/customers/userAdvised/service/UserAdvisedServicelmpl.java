@@ -1,5 +1,5 @@
 package pe.edu.upc.raze.users.customers.userAdvised.service;
-import lombok.var;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.raze.shared.exception.ResourceNotFoundException;
@@ -7,7 +7,6 @@ import pe.edu.upc.raze.shared.exception.ResourceValidationException;
 import pe.edu.upc.raze.users.customers.userAdvised.domain.model.entity.UserAdvised;
 import pe.edu.upc.raze.users.customers.userAdvised.domain.persistence.UserAdvisedRepository;
 import pe.edu.upc.raze.users.customers.userAdvised.domain.services.UserAdvisedService;
-
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.util.List;

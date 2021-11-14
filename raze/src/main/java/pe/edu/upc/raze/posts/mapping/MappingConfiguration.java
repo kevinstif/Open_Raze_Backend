@@ -8,4 +8,9 @@ public class MappingConfiguration {
     public FashionMapper fashionMapper(){
         return new FashionMapper();
     }
+
+    @Bean
+    public PostMapper postMapper(){
+        return new PostMapper();
+    }
 }

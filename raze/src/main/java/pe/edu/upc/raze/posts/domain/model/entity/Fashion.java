@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,4 +25,7 @@ public class Fashion extends AuditModel {
     @Size(max = 20)
     @Column(unique = true)
     private String title;
+
+    @OneToMany
+    private List<Post> posts;
 }

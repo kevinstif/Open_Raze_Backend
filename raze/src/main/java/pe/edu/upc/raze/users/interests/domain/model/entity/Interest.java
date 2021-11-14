@@ -1,11 +1,13 @@
 package pe.edu.upc.raze.users.interests.domain.model.entity;
 
 import lombok.*;
+import pe.edu.upc.raze.posts.domain.model.entity.Post;
 import pe.edu.upc.raze.shared.domain.model.AuditModel;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Getter
 @Setter
@@ -31,5 +33,7 @@ public class Interest extends AuditModel {
     @NotBlank
     @Size(max = 100)
     private String description;
-    
+
+    @OneToMany
+    private List<Post> posts;
 }
