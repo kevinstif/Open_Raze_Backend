@@ -21,8 +21,6 @@ import javax.validation.constraints.NotNull;
 public class UserAdvised  extends User {
 
     @NotNull
-    @NotBlank
-    @Column(unique = true)
     private Long mood;
 
 

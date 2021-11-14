@@ -21,7 +21,5 @@ public class UserAdvisor extends User {
 
 
     @NotNull
-    @NotBlank
-    @Column(unique = true)
     private Long yearExperience;
 }

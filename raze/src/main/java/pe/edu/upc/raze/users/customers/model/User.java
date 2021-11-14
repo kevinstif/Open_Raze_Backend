@@ -21,42 +21,24 @@ public class User  extends AuditModel{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
-    @NotNull
     @NotBlank
     @Size(max=50)
-    @Column(unique = true)
     protected String firstName;
 
-    @NotNull
     @NotBlank
     @Size(max=50)
-    @Column(unique = true)
     protected String lastName;
-    @NotNull
+
     @NotBlank
     @Size(max=50)
     @Column(unique = true)
     protected String username;
 
-    @NotNull
     @NotBlank
     @Size(max=50)
-    @Column(unique = true)
     protected String password;
 
-
     @NotNull
-    @NotBlank
-    @Size(max=50)
-    @Column(unique = true)
     protected Long age;
 
-
-
-
-    @NotNull
-    @NotBlank
-    @Size(max=50)
-    @Column(unique = true)
-    private Boolean premium;
 }

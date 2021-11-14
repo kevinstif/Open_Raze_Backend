@@ -59,7 +59,6 @@ public class UserAdvisedServicelmpl implements UserAdvisedService {
         var userAdvisedUpdate=userAdvisedRepository.findById(UserAdvisedId)
                 .map(userAdvised->userAdvisedRepository.save(
                         userAdvised.withMood(request.getMood())
-
                 )).orElseThrow(()->new ResourceNotFoundException(ENTITY,UserAdvisedId));
 
         return userAdvisedUpdate;
