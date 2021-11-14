@@ -6,12 +6,15 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.Lob;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Getter
 @Setter
 public class CreatePostResource {
+    private Long id;
+
     @NotNull
     @Size(max = 70)
     private String title;
@@ -24,13 +27,14 @@ public class CreatePostResource {
     private String description;
 
     @NotNull
+    @NotEmpty
     private Float rate;
 
     @NotNull
     private Integer numberOfRates;
 
-    @NotNull
-    private Long userId;
+    //@NotNull
+    //private Long userId;
 
     @NotNull
     private Long interestId;

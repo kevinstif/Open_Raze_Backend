@@ -14,38 +14,27 @@ import javax.validation.constraints.Size;
 public class CreateUserAdvisedResource {
 
     @NotNull
-    @NotBlank
     @Size(max=50)
-    @Column(unique = true)
     private String firstName;
 
     @NotNull
-    @NotBlank
     @Size(max=50)
-    @Column(unique = true)
     private String lastName;
+
     @NotNull
-    @NotBlank
     @Size(max=50)
-    @Column(unique = true)
     private String username;
 
     @NotNull
-    @NotBlank
     @Size(max=50)
-    @Column(unique = true)
     private String password;
 
 
     @NotNull
-    @NotBlank
     @Size(max=50)
-    @Column(unique = true)
     private String age;
 
     @NotNull
-    @NotBlank
-    @Column(unique = true)
     private Long mood;
 
 

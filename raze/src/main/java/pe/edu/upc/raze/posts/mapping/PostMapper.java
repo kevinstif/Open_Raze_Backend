@@ -17,13 +17,18 @@ public class PostMapper implements Serializable {
     @Autowired
     EnhancedModelMapper mapper;
 
-    public PostResource toResource(Post model) { return mapper.map(model, PostResource.class); }
+    public PostResource toResource(Post model) {
+        System.out.println("=========PRINT TO RESOURCE==========");
+        return mapper.map(model, PostResource.class);
+    }
 
     public Page<PostResource> modelListToPage(List<Post> modelList, Pageable pageable){
+
         return new PageImpl<>(mapper.mapList(modelList, PostResource.class), pageable, modelList.size());
     }
 
     public Post toModel(CreatePostResource resource) {
+        System.out.println("=========PRINT TO MODEL==========");
         return mapper.map(resource, Post.class);
     }
 

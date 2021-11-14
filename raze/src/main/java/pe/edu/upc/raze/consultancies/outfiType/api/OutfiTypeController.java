@@ -1,6 +1,5 @@
 package pe.edu.upc.raze.consultancies.outfiType.api;
 
-import lombok.var;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -26,26 +25,19 @@ public class OutfiTypeController {
     public Page<OutfiTypeResource> GetAllOutfiTypes(Pageable pageable){
 
 
-        var outfiTypesResource = outfiTypeMapper.modelListToPage(outfiTypeService.GetAll(),pageable);
-        return outfiTypesResource;
+        return outfiTypeMapper.modelListToPage(outfiTypeService.GetAll(),pageable);
     }
 
     @GetMapping("{outfiTypeId}")
     public OutfiTypeResource GetOutfiTypeById(@PathVariable Long outfiTypeId){
 
-        var outfiTypeResource = outfiTypeMapper.toResource(outfiTypeService.GetById(outfiTypeId));
-        return outfiTypeResource;
+        return outfiTypeMapper.toResource(outfiTypeService.GetById(outfiTypeId));
     }
 
     @PostMapping
     public  OutfiTypeResource CreateOutfiType(@RequestBody CreateOutfiTypeResource request){
-        var outfiType = outfiTypeMapper.toModel(request);
 
-        var outfiTypeCreated = outfiTypeService.Create(outfiType);
-
-        var outfiTypeResource=outfiTypeMapper.toResource(outfiTypeCreated);
-
-        return outfiTypeResource;
+        return outfiTypeMapper.toResource(outfiTypeService.Create(outfiTypeMapper.toModel(request)));
     }
 
     @PutMapping("{outfiTypeId}")

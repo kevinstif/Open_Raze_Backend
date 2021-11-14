@@ -1,6 +1,5 @@
 package pe.edu.upc.raze.consultancies.outfits.api;
 
-import lombok.var;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -26,26 +25,18 @@ public class OutfitController {
     public Page<OutfitResource> GetAllOutfits(Pageable pageable){
 
 
-        var outfitsResource = outfitMapper.modelListToPage(outfitService.GetAll(),pageable);
-        return outfitsResource;
+        return outfitMapper.modelListToPage(outfitService.GetAll(),pageable);
     }
 
     @GetMapping("{outfitId}")
     public OutfitResource GetOutfitById(@PathVariable Long outfitId){
 
-        var outfitResource = outfitMapper.toResource(outfitService.GetById(outfitId));
-        return outfitResource;
+        return outfitMapper.toResource(outfitService.GetById(outfitId));
     }
 
     @PostMapping
     public  OutfitResource CreateOutfit(@RequestBody CreateOutfitResource request){
-        var outfit = outfitMapper.toModel(request);
-
-        var outfitCreated = outfitService.Create(outfit);
-
-        var outfitResource=outfitMapper.toResource(outfitCreated);
-
-        return outfitResource;
+        return outfitMapper.toResource(outfitService.Create(outfitMapper.toModel(request)));
     }
 
     @PutMapping("{outfitId}")

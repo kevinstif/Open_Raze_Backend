@@ -1,6 +1,5 @@
 package pe.edu.upc.raze.consultancies.outfiType.service;
 
-import lombok.var;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.raze.consultancies.outfiType.domain.model.entity.OutfiType;
