@@ -49,11 +49,11 @@ public class Post extends AuditModel {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "advised_id", nullable = false)
-    private UserAdvised userAdvised;
+    private UserAdvised userAdvised = null;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "advisor_id", nullable = false)
-    private UserAdvisor userAdvisor;
+    private UserAdvisor userAdvisor = null;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "interest_id", nullable = false)
