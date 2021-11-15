@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58ebbf2e-bb4d-44cb-8db6-e32e1eae8ea1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/api/UserAdvisorsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/domain/model/entity/UserAdvisor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/domain/persistence/UserAdvisorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/domain/services/UserAdvisorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/mapping/MappingConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/mapping/UserAdvisorMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/CreateUserAdvisorResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/UpdateUserAdvisorResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/UserAdvisorResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/service/UserAdvisorServicelmpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/raze/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/domain/model/entity/UserAdvised.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/domain/model/entity/UserAdvised.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/mapping/MappingConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/mapping/MappingConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/CreateUserAdvisedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/CreateUserAdvisedResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/UpdateUserAdvisedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/UpdateUserAdvisedResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/UserAdvisedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/resources/UserAdvisedResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/service/UserAdvisedServicelmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvised/service/UserAdvisedServicelmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/domain/model/entity/UserAdvisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/domain/model/entity/UserAdvisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/CreateUserAdvisorResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/CreateUserAdvisorResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/UpdateUserAdvisorResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/UpdateUserAdvisorResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/UserAdvisorResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/raze/src/main/java/pe/edu/upc/raze/users/customers/userAdvisors/resources/UserAdvisorResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,5 +139,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
