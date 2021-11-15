@@ -48,11 +48,11 @@ public class Post extends AuditModel {
     private Integer numberOfRates;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "advised_id", nullable = false)
+    @JoinColumn(name = "advised_id", nullable = true)
     private UserAdvised userAdvised = null;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "advisor_id", nullable = false)
+    @JoinColumn(name = "advisor_id", nullable = true)
     private UserAdvisor userAdvisor = null;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

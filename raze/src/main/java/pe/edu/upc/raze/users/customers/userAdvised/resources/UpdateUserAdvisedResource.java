@@ -34,8 +34,8 @@ public class UpdateUserAdvisedResource {
     @NotNull
     private Long age;
 
-    @NotNull
-    private Boolean premium;
+    //@NotNull
+    //private Boolean premium;
 
     @NotNull
     private Long mood;

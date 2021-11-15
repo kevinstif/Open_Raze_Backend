@@ -31,8 +31,8 @@ public class UpdateUserAdvisorResource {
     @NotNull
     private Long age;
 
-    @NotNull
-    private Boolean premium;
+    //@NotNull
+    //private Boolean premium;
 
     @NotNull
     private Long yearsExperience;

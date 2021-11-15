@@ -12,6 +12,6 @@ public class UserAdvisorResource {
     private String username;
     private String password;
     private Long age;
-    private Boolean premium;
+    //private Boolean premium;
     private Long yearExperience;
 }
