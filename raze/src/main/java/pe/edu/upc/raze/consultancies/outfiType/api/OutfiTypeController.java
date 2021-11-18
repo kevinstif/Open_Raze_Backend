@@ -1,5 +1,6 @@
 package pe.edu.upc.raze.consultancies.outfiType.api;
 
+import lombok.var;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
