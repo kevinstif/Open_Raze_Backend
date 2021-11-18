@@ -56,9 +56,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	        .addFilter(new JwtAuthenticationFilter(authenticationManager()))
 	        .addFilter(new JwtAuthorizationFilter(authenticationManager(),  this.usuarioRepository))
 	        .authorizeRequests()
-	        // configure access rules
+	        //TODO configure access rules
+				//↓ Endpoint donde todos los usuarios pueden acceder permitAll()
 	        //.antMatchers(HttpMethod.POST, "/loginrest").permitAll()
-	        //.antMatchers("/api/rest1/*").hasRole("MANAGER")
+	        .antMatchers("/api/v1/outfits/**").hasRole("ADVISOR")
 	        //.antMatchers("/api/rest2/*").hasRole("ADMIN")
 	        .anyRequest().authenticated();
 	}
