@@ -8,7 +8,6 @@ import java.util.List;
 @Table(name = "users")
 public class Usuario {
 
-	//TODO
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -19,28 +18,28 @@ public class Usuario {
     @Column(length = 60, nullable = false)
     private String password;
 
-    private boolean enable;
+    private boolean premium;
     
     @Column(length = 40, nullable = false)
-    private String apellidos;
+    private String last_name;
     
     @Column(length = 40, nullable = false)
-    private String nombres;
+    private String first_name;
     
     @Column(length = 30, nullable = false)
-    private String cargo;
+    private String user_type;
     
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)    
     private List<Authority> authorities;
 
 	public Usuario() {
-		this.enable = true;
+		this.premium = true;
 		this.authorities = new ArrayList<>();
 	}
 	public Usuario(String username, String password ) {
 		this.username = username;
 		this.password = password;
-		this.enable = true;
+		this.premium = true;
 		this.authorities = new ArrayList<>();
 	}
 	public void addAuthority( String _authority ) {
@@ -74,12 +73,12 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public boolean isEnable() {
-		return enable;
+	public boolean isPremium() {
+		return premium;
 	}
 
-	public void setEnable(boolean enable) {
-		this.enable = enable;
+	public void setPremium(boolean premium) {
+		this.premium = premium;
 	}
 
 	public List<Authority> getAuthorities() {
@@ -89,22 +88,22 @@ public class Usuario {
 	public void setAuthorities(List<Authority> authorities) {
 		this.authorities = authorities;
 	}
-	public String getApellidos() {
-		return apellidos;
+	public String getLast_name() {
+		return last_name;
 	}
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
-	public String getNombres() {
-		return nombres;
+	public String getFirst_name() {
+		return first_name;
 	}
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
 	}
-	public String getCargo() {
-		return cargo;
+	public String getUser_type() {
+		return user_type;
 	}
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
+	public void setUser_type(String user_type) {
+		this.user_type = user_type;
 	}
 }

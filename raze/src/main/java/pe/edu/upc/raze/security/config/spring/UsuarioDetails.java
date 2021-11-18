@@ -64,18 +64,18 @@ public class UsuarioDetails implements UserDetails{
 
 	@Override
 	public boolean isEnabled() {
-		return this.usuario.isEnable();
+		return this.usuario.isPremium();
 	}
 	
 	// Datos de la Clase Usuario
-	public String getNombres() {
-		return this.usuario.getNombres();
+	public String getFirst_name() {
+		return this.usuario.getFirst_name();
 	}
-	public String getApellidos() {
-		return this.usuario.getApellidos();
+	public String getLast_name() {
+		return this.usuario.getLast_name();
 	}
-	public String getCargo() {
-		return this.usuario.getCargo();
+	public String getUser_type() {
+		return this.usuario.getUser_type();
 	}
 
 }

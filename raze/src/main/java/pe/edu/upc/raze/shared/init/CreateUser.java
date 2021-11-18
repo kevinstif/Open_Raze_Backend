@@ -25,24 +25,23 @@ public class CreateUser implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        //COMENTAR DESPUÉS DE EJECUTAR POR PRIMERA VEZ
         Usuario juan = new Usuario();
-        juan.setUsername("Juan");
-        juan.setPassword(passwordEncoder.encode("Juan"));
-        juan.setEnable(true);
-        juan.setApellidos("Lopez");
-        juan.setNombres("juan");
-        juan.setCargo("Advisor");
+        juan.setUsername("juan123");
+        juan.setPassword(passwordEncoder.encode("juan123"));
+        juan.setPremium(true);
+        juan.setLast_name("Lopez");
+        juan.setFirst_name("Juan");
+        juan.setUser_type("Advisor");
         juan.addAuthority("ROLE_ADVISOR");
         juan.addAuthority("ACCESS_OUTFITS");
 
         Usuario luis = new Usuario();
-        luis.setUsername("Luis");
-        luis.setPassword(passwordEncoder.encode("Luis"));
-        luis.setEnable(true);
-        luis.setApellidos("Advincula");
-        luis.setNombres("lucho");
-        luis.setCargo("Advised");
+        luis.setUsername("lucho5");
+        luis.setPassword(passwordEncoder.encode("lucho5"));
+        luis.setPremium(true);
+        luis.setLast_name("Advincula");
+        luis.setFirst_name("Luis");
+        luis.setUser_type("Advised");
         luis.addAuthority("ROLE_ADVISED");
         luis.addAuthority("ACCESS_INTERESTS");
 
