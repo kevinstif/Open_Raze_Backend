@@ -3,7 +3,6 @@ package pe.edu.upc.raze.security.config.spring;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import pe.edu.upc.raze.security.config.jwt.JwtAuthenticationFilter;
 import pe.edu.upc.raze.security.config.jwt.JwtAuthorizationFilter;
-import pe.edu.upc.raze.security.domain.persistence.UsuarioRepository;
+import pe.edu.upc.raze.security.domain.persistence.UserRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -24,7 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private UsuarioDetailsService usuarioDetailsService;
 	
 	@Autowired
-	private UsuarioRepository usuarioRepository;
+	private UserRepository userRepository;
 
 	@Bean
 	PasswordEncoder passwordEncoder( ) {
@@ -54,7 +53,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	        .and()
 	        // add jwt filters (1. authentication, 2. authorization)
 	        .addFilter(new JwtAuthenticationFilter(authenticationManager()))
-	        .addFilter(new JwtAuthorizationFilter(authenticationManager(),  this.usuarioRepository))
+	        .addFilter(new JwtAuthorizationFilter(authenticationManager(),  this.userRepository))
 	        .authorizeRequests()
 	        //TODO configure access rules
 				//↓ Endpoint donde todos los usuarios pueden acceder permitAll()

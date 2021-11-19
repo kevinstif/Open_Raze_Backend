@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Getter
@@ -21,7 +22,11 @@ public class RegisterRequest {
     @NotNull
     @NotBlank
     private String imgProfile;
+
+    @NotNull
     private Integer age;
+
+    @NotNull
     private Long interestId;
 
     @NotNull
@@ -36,6 +41,7 @@ public class RegisterRequest {
     @NotNull
     @NotBlank
     private String userType;
+
     private Integer yearsExperience;
     private Long professionId;
 }

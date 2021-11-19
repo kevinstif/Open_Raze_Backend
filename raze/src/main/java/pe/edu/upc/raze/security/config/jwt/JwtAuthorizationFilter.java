@@ -8,7 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import pe.edu.upc.raze.security.config.spring.UsuarioDetails;
 import pe.edu.upc.raze.security.domain.model.entity.User;
-import pe.edu.upc.raze.security.domain.persistence.UsuarioRepository;
+import pe.edu.upc.raze.security.domain.persistence.UserRepository;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -21,9 +21,10 @@ import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 
 public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 	
-    private UsuarioRepository usuarioRepository;
+    private UserRepository usuarioRepository;
 
-    public JwtAuthorizationFilter(AuthenticationManager authenticationManager, UsuarioRepository userRepository) {
+
+    public JwtAuthorizationFilter(AuthenticationManager authenticationManager, UserRepository userRepository) {
         super(authenticationManager);
         this.usuarioRepository = userRepository;
     }
