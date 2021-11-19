@@ -55,14 +55,12 @@ public class OutfitServiceImpl implements OutfitService {
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY,violations);
 
-        var outfitUpdate=outfitRepository.findById(OutfitId)
+        return outfitRepository.findById(OutfitId)
                 .map(outfit->outfitRepository.save(
                         outfit.withName(request.getName())
                                 .withDescription(request.getDescription())
                                 .withUrl(request.getUrl())
                 )).orElseThrow(()->new ResourceNotFoundException(ENTITY,OutfitId));
-
-        return outfitUpdate;
     }
 
     @Override

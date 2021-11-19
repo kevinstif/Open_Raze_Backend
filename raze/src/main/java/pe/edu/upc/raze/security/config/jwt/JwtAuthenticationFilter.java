@@ -22,12 +22,12 @@ import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-	private AuthenticationManager authenticationManager;
-	public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
-		this.authenticationManager = authenticationManager;
-	}
-	
-	/* Trigger when we issue POST request to /login
+    private final AuthenticationManager authenticationManager;
+    public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
+
+    /* Trigger when we issue POST request to /login
     We also need to pass in {"username":"dan", "password":"dan123"} in the request body
      */
     @Override
@@ -56,7 +56,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         // Grab principal
-    	UsuarioDetails principal = (UsuarioDetails) authResult.getPrincipal();
+        UsuarioDetails principal = (UsuarioDetails) authResult.getPrincipal();
 
         // Create JWT Token
         String token = JWT.create()

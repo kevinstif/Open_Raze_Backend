@@ -55,14 +55,12 @@ public class OutfiTypeServiceImpl implements OutfiTypeService {
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY,violations);
 
-        var outfiTypeUpdate=outfiTypeRepository.findById(OutfiTypeId)
+        return outfiTypeRepository.findById(OutfiTypeId)
                 .map(outfiType->outfiTypeRepository.save(
                         outfiType.withName(request.getName())
                                 .withDescription(request.getDescription())
                                 .withUrl(request.getUrl())
                 )).orElseThrow(()->new ResourceNotFoundException(ENTITY,OutfiTypeId));
-
-        return outfiTypeUpdate;
     }
 
     @Override
