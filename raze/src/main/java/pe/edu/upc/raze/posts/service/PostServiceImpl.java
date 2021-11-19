@@ -8,17 +8,12 @@ import pe.edu.upc.raze.posts.domain.model.entity.Post;
 import pe.edu.upc.raze.posts.domain.persistence.FashionRepository;
 import pe.edu.upc.raze.posts.domain.persistence.PostRepository;
 import pe.edu.upc.raze.posts.domain.service.PostService;
+import pe.edu.upc.raze.security.domain.persistence.UserRepository;
 import pe.edu.upc.raze.shared.exception.ResourceNotFoundException;
 import pe.edu.upc.raze.shared.exception.ResourceValidationException;
-import pe.edu.upc.raze.users.customers.model.enums.UserType;
-import pe.edu.upc.raze.users.customers.userAdvised.domain.persistence.UserAdvisedRepository;
-import pe.edu.upc.raze.users.customers.userAdvisors.domain.persistence.UserAdvisorRepository;
 import pe.edu.upc.raze.users.interests.domain.persistence.InterestRepository;
-
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Set;
 
@@ -26,18 +21,15 @@ import java.util.Set;
 public class PostServiceImpl implements PostService {
     private static final String ENTITY = "Post";
     private final PostRepository postRepository;
-    private final UserAdvisedRepository userAdvisedRepository;
-    private final UserAdvisorRepository userAdvisorRepository;
+    private final UserRepository userRepository;
     private final FashionRepository fashionRepository;
     private final InterestRepository interestRepository;
     private final Validator validator;
 
-    public PostServiceImpl(PostRepository postRepository, UserAdvisedRepository userAdvisedRepository,
-                           UserAdvisorRepository userAdvisorRepository, FashionRepository fashionRepository,
+    public PostServiceImpl(PostRepository postRepository, UserRepository userRepository, FashionRepository fashionRepository,
                            InterestRepository interestRepository, Validator validator) {
         this.postRepository = postRepository;
-        this.userAdvisedRepository = userAdvisedRepository;
-        this.userAdvisorRepository = userAdvisorRepository;
+        this.userRepository = userRepository;
         this.fashionRepository = fashionRepository;
         this.interestRepository = interestRepository;
         this.validator = validator;
@@ -54,9 +46,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> getAllByUserId(Long userId, UserType userType) {
-        if(userType == UserType.Advised) return postRepository.findByUserAdvisedId(userId);
-        return postRepository.findByUserAdvisorId(userId);
+    public List<Post> getAllByUserId(Long userId) {
+        return postRepository.findByUserId(userId);
     }
 
     @Override
@@ -66,7 +57,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Post create(Long userId, UserType userType, Post request, Long interestId, Long fashionId) {
+    public Post create(Long userId, Post request, Long interestId, Long fashionId) {
         Set<ConstraintViolation<Post>> violations = validator.validate(request);
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
@@ -81,14 +72,8 @@ public class PostServiceImpl implements PostService {
             return request;
         }).orElseThrow(() -> new ResourceNotFoundException("Interest", interestId));
 
-        if(userType == UserType.Advised){
-            return userAdvisedRepository.findById(userId).map(userAdvised -> {
-                request.setUserAdvised(userAdvised);
-                return postRepository.save(request);
-            }).orElseThrow(() -> new ResourceNotFoundException("User", userId));
-        }
-        return userAdvisorRepository.findById(userId).map(userAdvisor -> {
-            request.setUserAdvisor(userAdvisor);
+        return userRepository.findById(userId).map(userAdvised -> {
+            request.setUser(userAdvised);
             return postRepository.save(request);
         }).orElseThrow(() -> new ResourceNotFoundException("User", userId));
     }
@@ -99,36 +84,32 @@ public class PostServiceImpl implements PostService {
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
 
-        if(!userAdvisorRepository.existsById(userId) && !userAdvisedRepository.existsById(userId)){
+        if(!userRepository.existsById(userId))
             throw new ResourceNotFoundException("User", userId);
-        }
+
+        if(!postRepository.existsById(postId))
+            throw new ResourceNotFoundException("Post", postId);
 
         return postRepository.findById(postId).map(post ->
-            postRepository.save(post.withId(request.getId()))
+            postRepository.save(post.withTitle(request.getTitle())
+                    .withImage(request.getImage())
+                    .withDescription(request.getDescription())
+                    .withRate(request.getRate())
+                    .withNumberOfRates(request.getNumberOfRates()))
         ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, postId));
     }
 
     @Override
-    public ResponseEntity<?> delete(Long userId, Long postId, UserType userType) {
-        if(userType == UserType.Advised){
-            return postRepository.findByIdAndUserAdvisedId(postId, userId).map(post -> {
-                postRepository.delete(post);
-                return ResponseEntity.ok().build();
-            }).orElseThrow(() -> new ResourceNotFoundException(ENTITY, postId));
-        }
-        return postRepository.findByIdAndUserAdvisorId(postId, userId).map(post -> {
+    public ResponseEntity<?> delete(Long userId, Long postId) {
+        return postRepository.findByIdAndUserId(postId, userId).map(post -> {
             postRepository.delete(post);
             return ResponseEntity.ok().build();
         }).orElseThrow(() -> new ResourceNotFoundException(ENTITY, postId));
     }
 
     @Override
-    public Post getByIdAndUserId(Long userId, Long postId, UserType userType) {
-        if(userType == UserType.Advised){
-            return postRepository.findByIdAndUserAdvisedId(postId, userId)
-                    .orElseThrow(() -> new ResourceNotFoundException(ENTITY, postId));
-        }
-        return postRepository.findByIdAndUserAdvisorId(postId, userId)
+    public Post getByIdAndUserId(Long userId, Long postId) {
+        return postRepository.findByIdAndUserId(postId, userId)
                 .orElseThrow(() -> new ResourceNotFoundException(ENTITY, postId));
     }
 }

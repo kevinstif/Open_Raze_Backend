@@ -11,10 +11,10 @@ import java.util.List;
 public interface PostService {
     List<Post> getAll();
     Page<Post> getAll(Pageable pageable);
-    List<Post> getAllByUserId(Long userId, UserType userType);
+    List<Post> getAllByUserId(Long userId);
     Post getById(Long postId);
-    Post create(Long userId, UserType userType, Post request, Long interestId, Long fashionId);
+    Post create(Long userId, Post request, Long interestId, Long fashionId);
     Post update(Long userId, Long postId, Post request);
-    ResponseEntity<?> delete(Long userId, Long postId, UserType userType);
-    Post getByIdAndUserId(Long userId, Long postId, UserType userType);
+    ResponseEntity<?> delete(Long userId, Long postId);
+    Post getByIdAndUserId(Long userId, Long postId);
 }

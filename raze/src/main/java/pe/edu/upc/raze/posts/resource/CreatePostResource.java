@@ -2,10 +2,6 @@ package pe.edu.upc.raze.posts.resource;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
-
-import javax.persistence.Lob;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -32,9 +28,6 @@ public class CreatePostResource {
 
     @NotNull
     private Integer numberOfRates;
-
-    //@NotNull
-    //private Long userId;
 
     @NotNull
     private Long interestId;

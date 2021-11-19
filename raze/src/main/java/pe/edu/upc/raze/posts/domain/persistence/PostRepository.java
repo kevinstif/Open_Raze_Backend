@@ -9,8 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
-    List<Post> findByUserAdvisedId(Long userId);
-    List<Post> findByUserAdvisorId(Long userId);
-    Optional<Post> findByIdAndUserAdvisedId(Long postId, Long userId);
-    Optional<Post> findByIdAndUserAdvisorId(Long postId, Long userId);
+    List<Post> findByUserId(Long userId);
+    Optional<Post> findByIdAndUserId(Long postId, Long userId);
 }

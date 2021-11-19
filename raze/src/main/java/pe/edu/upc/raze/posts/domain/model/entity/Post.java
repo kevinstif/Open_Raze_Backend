@@ -2,9 +2,8 @@ package pe.edu.upc.raze.posts.domain.model.entity;
 
 import lombok.*;
 import org.hibernate.annotations.Type;
+import pe.edu.upc.raze.security.domain.model.entity.User;
 import pe.edu.upc.raze.shared.domain.model.AuditModel;
-import pe.edu.upc.raze.users.customers.userAdvised.domain.model.entity.UserAdvised;
-import pe.edu.upc.raze.users.customers.userAdvisors.domain.model.entity.UserAdvisor;
 import pe.edu.upc.raze.users.interests.domain.model.entity.Interest;
 
 import javax.persistence.*;
@@ -48,12 +47,8 @@ public class Post extends AuditModel {
     private Integer numberOfRates;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "advised_id", nullable = true)
-    private UserAdvised userAdvised = null;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "advisor_id", nullable = true)
-    private UserAdvisor userAdvisor = null;
+    @JoinColumn(name = "user_id", nullable = true)
+    private User user = null;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "interest_id", nullable = false)
