@@ -2,6 +2,7 @@ package pe.edu.upc.raze.security.domain.service;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import pe.edu.upc.raze.security.domain.model.entity.User;
+import pe.edu.upc.raze.security.domain.service.communication.AuthenticateRequest;
 
 import java.util.List;
 

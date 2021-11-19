@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import pe.edu.upc.raze.security.domain.model.entity.User;
 import pe.edu.upc.raze.security.domain.service.UserService;
+import pe.edu.upc.raze.security.domain.service.communication.AuthenticateRequest;
 
 import java.util.List;
 
