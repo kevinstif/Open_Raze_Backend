@@ -5,7 +5,6 @@ import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Getter
@@ -37,6 +36,8 @@ public class RegisterRequest {
     @NotNull
     @NotBlank
     private String password;
+
+    protected boolean premium;
 
     @NotNull
     @NotBlank

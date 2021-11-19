@@ -68,11 +68,8 @@ public class UsuarioDetails implements UserDetails{
 	}
 	
 	// Datos de la Clase Usuario
-	public String getFirst_name() {
-		return this.user.getFirst_name();
-	}
-	public String getLast_name() {
-		return this.user.getLast_name();
+	public String getName() {
+		return this.user.getName();
 	}
 	public String getUser_type() {
 		return this.user.getUser_type();

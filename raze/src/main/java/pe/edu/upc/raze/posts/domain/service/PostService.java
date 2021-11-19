@@ -4,7 +4,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import pe.edu.upc.raze.posts.domain.model.entity.Post;
-import pe.edu.upc.raze.users.customers.model.enums.UserType;
 
 import java.util.List;
 

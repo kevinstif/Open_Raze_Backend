@@ -1,6 +1,5 @@
 package pe.edu.upc.raze.consultancies.outfits.service;
 
-import lombok.var;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.raze.consultancies.outfits.domain.model.entity.Outfit;
