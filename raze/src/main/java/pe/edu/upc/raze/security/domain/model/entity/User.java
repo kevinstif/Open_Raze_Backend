@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class Usuario {
+public class User {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,11 +32,11 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)    
     private List<Authority> authorities;
 
-	public Usuario() {
+	public User() {
 		this.premium = true;
 		this.authorities = new ArrayList<>();
 	}
-	public Usuario(String username, String password ) {
+	public User(String username, String password ) {
 		this.username = username;
 		this.password = password;
 		this.premium = true;

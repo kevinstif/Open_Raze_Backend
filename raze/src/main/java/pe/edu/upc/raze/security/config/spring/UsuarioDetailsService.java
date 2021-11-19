@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.raze.security.domain.model.entity.Usuario;
+import pe.edu.upc.raze.security.domain.model.entity.User;
 import pe.edu.upc.raze.security.domain.persistence.UsuarioRepository;
 
 import java.util.Optional;
@@ -19,7 +19,7 @@ public class UsuarioDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// Retornando el usuario 
-		Optional<Usuario> buscado = this.usuarioRepository.findByUsername(username);
+		Optional<User> buscado = this.usuarioRepository.findByUsername(username);
 		
 		if(buscado.isPresent()) {
 			UsuarioDetails usuarioDetails = new UsuarioDetails(buscado.get());

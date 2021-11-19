@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.raze.security.domain.model.entity.Usuario;
+import pe.edu.upc.raze.security.domain.model.entity.User;
 import pe.edu.upc.raze.security.domain.persistence.AuthorityRepository;
 import pe.edu.upc.raze.security.domain.persistence.UsuarioRepository;
 
@@ -25,7 +25,7 @@ public class CreateUser implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Usuario juan = new Usuario();
+        User juan = new User();
         juan.setUsername("juan123");
         juan.setPassword(passwordEncoder.encode("juan123"));
         juan.setPremium(true);
@@ -35,7 +35,7 @@ public class CreateUser implements CommandLineRunner {
         juan.addAuthority("ROLE_ADVISOR");
         juan.addAuthority("ACCESS_OUTFITS");
 
-        Usuario luis = new Usuario();
+        User luis = new User();
         luis.setUsername("lucho5");
         luis.setPassword(passwordEncoder.encode("lucho5"));
         luis.setPremium(true);
@@ -45,7 +45,7 @@ public class CreateUser implements CommandLineRunner {
         luis.addAuthority("ROLE_ADVISED");
         luis.addAuthority("ACCESS_INTERESTS");
 
-        List<Usuario> usuarios = Arrays.asList(juan, luis);
+        List<User> usuarios = Arrays.asList(juan, luis);
         this.usuarioRepository.saveAll(usuarios);
 
     }

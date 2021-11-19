@@ -15,7 +15,7 @@ public class Authority {
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")    
-    private Usuario usuario;
+    private User usuario;
 
 	public long getId() {
 		return id;
@@ -33,12 +33,12 @@ public class Authority {
 		this.authority = authority;
 	}
 
-	public Usuario getUsuario() {
+	public User getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(User user) {
+		this.usuario = user;
 	}
  
     

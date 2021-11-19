@@ -7,7 +7,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import pe.edu.upc.raze.security.config.spring.UsuarioDetails;
-import pe.edu.upc.raze.security.domain.model.entity.Usuario;
+import pe.edu.upc.raze.security.domain.model.entity.User;
 import pe.edu.upc.raze.security.domain.persistence.UsuarioRepository;
 
 import javax.servlet.FilterChain;
@@ -61,7 +61,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
             // Search in the DB if we find the user by token subject (username)
             // If so, then grab user details and create spring auth token using username, pass, authorities/roles
             if (userName != null) {
-            	Optional<Usuario> usuario = usuarioRepository.findByUsername(userName);
+            	Optional<User> usuario = usuarioRepository.findByUsername(userName);
             	if(usuario.isPresent()) {
             		UsuarioDetails principal = new UsuarioDetails(usuario.get());
                     UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userName, null, principal.getAuthorities());
