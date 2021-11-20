@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class MappingConfiguration {
     @Bean
     public ProfessionMapper professionMapperMapper() {
+
         return new ProfessionMapper();
     }
 }
