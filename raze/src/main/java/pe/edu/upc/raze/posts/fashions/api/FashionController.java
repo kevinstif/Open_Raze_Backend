@@ -1,15 +1,15 @@
-package pe.edu.upc.raze.posts.api;
+package pe.edu.upc.raze.posts.fashions.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.raze.posts.domain.service.FashionService;
-import pe.edu.upc.raze.posts.mapping.FashionMapper;
-import pe.edu.upc.raze.posts.resource.CreateFashionResource;
-import pe.edu.upc.raze.posts.resource.FashionResource;
-import pe.edu.upc.raze.posts.resource.UpdateFashionResource;
+import pe.edu.upc.raze.posts.fashions.domain.service.FashionService;
+import pe.edu.upc.raze.posts.fashions.mapping.FashionMapper;
+import pe.edu.upc.raze.posts.fashions.resource.CreateFashionResource;
+import pe.edu.upc.raze.posts.fashions.resource.FashionResource;
+import pe.edu.upc.raze.posts.fashions.resource.UpdateFashionResource;
 
 @RestController
 @RequestMapping("/api/v1/fashions")

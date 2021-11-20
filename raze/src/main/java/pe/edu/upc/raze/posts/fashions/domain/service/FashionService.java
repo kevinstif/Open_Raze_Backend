@@ -1,7 +1,7 @@
-package pe.edu.upc.raze.posts.domain.service;
+package pe.edu.upc.raze.posts.fashions.domain.service;
 
 import org.springframework.http.ResponseEntity;
-import pe.edu.upc.raze.posts.domain.model.entity.Fashion;
+import pe.edu.upc.raze.posts.fashions.domain.model.entity.Fashion;
 import java.util.List;
 
 public interface FashionService {

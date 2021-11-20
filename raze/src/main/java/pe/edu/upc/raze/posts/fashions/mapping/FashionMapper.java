@@ -1,13 +1,13 @@
-package pe.edu.upc.raze.posts.mapping;
+package pe.edu.upc.raze.posts.fashions.mapping;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import pe.edu.upc.raze.posts.domain.model.entity.Fashion;
-import pe.edu.upc.raze.posts.resource.CreateFashionResource;
-import pe.edu.upc.raze.posts.resource.FashionResource;
-import pe.edu.upc.raze.posts.resource.UpdateFashionResource;
+import pe.edu.upc.raze.posts.fashions.domain.model.entity.Fashion;
+import pe.edu.upc.raze.posts.fashions.resource.CreateFashionResource;
+import pe.edu.upc.raze.posts.fashions.resource.FashionResource;
+import pe.edu.upc.raze.posts.fashions.resource.UpdateFashionResource;
 import pe.edu.upc.raze.shared.mapping.EnhancedModelMapper;
 import java.io.Serializable;
 import java.util.List;

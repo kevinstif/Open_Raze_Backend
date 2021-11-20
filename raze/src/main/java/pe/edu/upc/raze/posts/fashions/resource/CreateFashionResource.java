@@ -1,4 +1,4 @@
-package pe.edu.upc.raze.posts.resource;
+package pe.edu.upc.raze.posts.fashions.resource;
 
 import lombok.Getter;
 import lombok.Setter;

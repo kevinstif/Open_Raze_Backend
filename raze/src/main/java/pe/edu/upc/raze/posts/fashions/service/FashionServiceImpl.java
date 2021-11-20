@@ -1,10 +1,10 @@
-package pe.edu.upc.raze.posts.service;
+package pe.edu.upc.raze.posts.fashions.service;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.raze.posts.domain.model.entity.Fashion;
-import pe.edu.upc.raze.posts.domain.persistence.FashionRepository;
-import pe.edu.upc.raze.posts.domain.service.FashionService;
+import pe.edu.upc.raze.posts.fashions.domain.model.entity.Fashion;
+import pe.edu.upc.raze.posts.fashions.domain.persistence.FashionRepository;
+import pe.edu.upc.raze.posts.fashions.domain.service.FashionService;
 import pe.edu.upc.raze.shared.exception.ResourceNotFoundException;
 import pe.edu.upc.raze.shared.exception.ResourceValidationException;
 
