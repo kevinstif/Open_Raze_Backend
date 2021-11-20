@@ -32,7 +32,7 @@ public class UsersController {
 
     @PostMapping
     public  UserResource CreateUser(@RequestBody RegisterRequest request){
-        return mapper.toResource(userService.register(mapper.toModel(request)));
+        return mapper.toResource(userService.register(mapper.toModel(request), request.getInterestId(), request.getProfessionId()));
     }
 
     @PutMapping("{userId}")

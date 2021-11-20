@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service;
 import pe.edu.upc.raze.security.domain.model.entity.User;
 import pe.edu.upc.raze.security.domain.persistence.UserRepository;
 import pe.edu.upc.raze.security.domain.service.UserService;
-import pe.edu.upc.raze.security.domain.service.communication.AuthenticateRequest;
 import pe.edu.upc.raze.shared.exception.ResourceNotFoundException;
 import pe.edu.upc.raze.shared.exception.ResourceValidationException;
+import pe.edu.upc.raze.users.interests.domain.persistence.InterestRepository;
+import pe.edu.upc.raze.users.professions.domain.persistence.ProfessionRepository;
+
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.util.List;
@@ -17,10 +19,14 @@ import java.util.Set;
 public class UserServiceImpl implements UserService {
     private static final String ENTITY = "User";
     private final UserRepository userRepository;
+    private final InterestRepository interestRepository;
+    private final ProfessionRepository professionRepository;
     private final Validator validator;
 
-    public UserServiceImpl(UserRepository userRepository, Validator validator) {
+    public UserServiceImpl(UserRepository userRepository, InterestRepository interestRepository, ProfessionRepository professionRepository, Validator validator) {
         this.userRepository = userRepository;
+        this.interestRepository = interestRepository;
+        this.professionRepository = professionRepository;
         this.validator = validator;
     }
 
@@ -36,18 +42,30 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User register(User request) {
+    public User register(User request, Long interestId, Long professionId) {
         Set<ConstraintViolation<User>> violations = validator.validate(request);
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
 
+        interestRepository.findById(interestId).map(interest -> {
+            request.setInterest(interest);
+            return request;
+        }).orElseThrow(() -> new ResourceNotFoundException("Interest", interestId));
+
+        if(professionId != null){
+            professionRepository.findById(professionId).map(profession -> {
+                request.setProfession(profession);
+                return request;
+            }).orElseThrow(() -> new ResourceNotFoundException("Profession", interestId));
+        }
+
         return userRepository.save(request);
     }
 
-    @Override
-    public ResponseEntity<?> authenticate(AuthenticateRequest request) {
-        return null;
-    }
+    //@Override
+    //public ResponseEntity<?> authenticate(AuthenticateRequest request) {
+    //    return null;
+    //}
 
     @Override
     public User update(Long userId, User request) {

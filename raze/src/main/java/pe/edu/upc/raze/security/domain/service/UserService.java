@@ -8,8 +8,8 @@ import java.util.List;
 public interface UserService {
     List<User> getAll();
     User getById(Long userId);
-    User register(User request);
-    ResponseEntity<?> authenticate(AuthenticateRequest request);
+    User register(User request, Long interestId, Long professionId);
+    //ResponseEntity<?> authenticate(AuthenticateRequest request);
     User update(Long userId, User request);
     ResponseEntity<?> delete(Long userId);
 }

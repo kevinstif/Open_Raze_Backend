@@ -20,7 +20,7 @@ public class User {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
 	@Column(length = 40, nullable = false)
 	private String name;
@@ -49,18 +49,18 @@ public class User {
 	@Column(length = 30, nullable = false)
 	private String user_type;
 
-	@Column()
+	@Column(nullable = true)
 	private Integer yearsExperience;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "profession_id")
+	@JoinColumn(name = "profession_id", nullable = true)
 	private ProfessionModel profession;
 
 	@OneToMany
 	private List<Post> posts;
     
-    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)    
-    private List<Authority> authorities;
+    //@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    //private List<Authority> authorities;
 
 	//public User() {
 	//	this.premium = true;
@@ -73,62 +73,62 @@ public class User {
 	//	this.authorities = new ArrayList<>();
 	//}
 
-	public void addAuthority( String _authority ) {
-		Authority authority = new Authority();
-		authority.setAuthority( _authority );
-		authority.setUsuario(this);
-		this.authorities.add(authority);
-	}
+	//public void addAuthority( String _authority ) {
+	//	Authority authority = new Authority();
+	//	authority.setAuthority( _authority );
+	//	authority.setUsuario(this);
+	//	this.authorities.add(authority);
+	//}
 
-	public long getId() {
-		return id;
-	}
+	//public long getId() {
+	//	return id;
+	//}
+//
+	//public void setId(long id) {
+	//	this.id = id;
+	//}
 
-	public void setId(long id) {
-		this.id = id;
-	}
+	//public String getUsername() {
+	//	return username;
+	//}
+//
+	//public void setUsername(String username) {
+	//	this.username = username;
+	//}
+//
+	//public String getPassword() {
+	//	return password;
+	//}
+//
+	//public void setPassword(String password) {
+	//	this.password = password;
+	//}
+//
+	//public boolean isPremium() {
+	//	return premium;
+	//}
+//
+	//public void setPremium(boolean premium) {
+	//	this.premium = premium;
+	//}
 
-	public String getUsername() {
-		return username;
-	}
+	//public List<Authority> getAuthorities() {
+	//	return authorities;
+	//}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public boolean isPremium() {
-		return premium;
-	}
-
-	public void setPremium(boolean premium) {
-		this.premium = premium;
-	}
-
-	public List<Authority> getAuthorities() {
-		return authorities;
-	}
-
-	public void setAuthorities(List<Authority> authorities) {
-		this.authorities = authorities;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getUser_type() {
-		return user_type;
-	}
-	public void setUser_type(String user_type) {
-		this.user_type = user_type;
-	}
+	//public void setAuthorities(List<Authority> authorities) {
+	//	this.authorities = authorities;
+	//}
+	//public String getName() {
+	//	return name;
+	//}
+	//public void setName(String name) {
+	//	this.name = name;
+	//}
+	//public String getUser_type() {
+	//	return user_type;
+	//}
+	//public void setUser_type(String user_type) {
+	//	this.user_type = user_type;
+	//}
 }

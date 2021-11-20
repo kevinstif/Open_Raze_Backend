@@ -1,15 +1,19 @@
 package pe.edu.upc.raze.security.domain.service.communication;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 @Getter
 @Setter
 public class RegisterRequest {
+    private Long id;
+
     @NotNull
     @NotBlank
     private String name;
@@ -41,8 +45,13 @@ public class RegisterRequest {
 
     @NotNull
     @NotBlank
-    private String userType;
+    private String user_type;
 
+    @Null
     private Integer yearsExperience;
+    @Null
     private Long professionId;
+
+    public Long getProfessionId() { return professionId; }
+    public Long getInterestId() { return interestId; }
 }
