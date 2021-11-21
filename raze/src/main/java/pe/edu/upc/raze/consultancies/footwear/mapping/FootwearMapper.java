@@ -18,6 +18,7 @@ public class FootwearMapper implements Serializable {
     EnhancedModelMapper mapper;
 
     public FootwearResource toResource(FootwearModel model){
+
         return mapper.map(model,FootwearResource.class);
     }
 
@@ -26,6 +27,7 @@ public class FootwearMapper implements Serializable {
     }
 
     public FootwearModel toModel (CreateFootwearResource resource){
+
         return mapper.map(resource, FootwearModel.class);
     }
 

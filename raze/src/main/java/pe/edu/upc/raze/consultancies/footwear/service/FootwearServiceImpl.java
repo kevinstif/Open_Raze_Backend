@@ -35,6 +35,7 @@ public class FootwearServiceImpl implements FootwearService {
 
     @Override
     public Page<FootwearModel> getAll(Pageable pageable) {
+
         return footwearRepository.findAll(pageable);
     }
 

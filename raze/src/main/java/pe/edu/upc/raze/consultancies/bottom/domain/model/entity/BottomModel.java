@@ -1,4 +1,4 @@
-package pe.edu.upc.raze.consultancies.footwear.domain.model.entity;
+package pe.edu.upc.raze.consultancies.bottom.domain.model.entity;
 
 import lombok.*;
 import pe.edu.upc.raze.shared.domain.model.AuditModel;
@@ -14,8 +14,8 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "footwear")
-public class FootwearModel extends AuditModel {
+@Table(name = "bottom")
+public class BottomModel extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
