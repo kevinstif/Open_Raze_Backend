@@ -4,6 +4,7 @@ package pe.edu.upc.raze.consultancies.footwear.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.consultancies.footwear.domain.service.FootwearService;
 import pe.edu.upc.raze.consultancies.footwear.mapping.FootwearMapper;
@@ -39,6 +40,11 @@ public class FootwearController {
     @PutMapping("{Id}")
     public FootwearResource updateFootwear(@PathVariable Long Id, @RequestBody UpdateFootwearResource request) {
         return mapper.toResource(footwearService.update(Id, mapper.toModel(request)));
+    }
+
+    @DeleteMapping("{Id}")
+    public ResponseEntity<?> deleteFootwear(@PathVariable Long Id){
+        return footwearService.delete(Id) ;
     }
 
 }

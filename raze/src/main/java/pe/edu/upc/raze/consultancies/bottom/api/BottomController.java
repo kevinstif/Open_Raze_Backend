@@ -4,6 +4,7 @@ package pe.edu.upc.raze.consultancies.bottom.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.consultancies.bottom.domain.service.BottomService;
 import pe.edu.upc.raze.consultancies.bottom.mapping.BottomMapper;
@@ -39,5 +40,10 @@ public class BottomController {
     @PutMapping("{Id}")
     public BottomResource updateFootwear(@PathVariable Long Id, @RequestBody UpdateBottomResource request) {
         return mapper.toResource(bottomService.update(Id, mapper.toModel(request)));
+    }
+
+    @DeleteMapping("{Id}")
+    public ResponseEntity<?> deleteBottom(@PathVariable Long Id){
+        return bottomService.delete(Id) ;
     }
 }
