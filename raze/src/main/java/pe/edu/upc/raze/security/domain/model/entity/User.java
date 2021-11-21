@@ -52,7 +52,7 @@ public class User {
 	@Column(nullable = true)
 	private Integer yearsExperience;
 
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(fetch = FetchType.LAZY, optional = true)
 	@JoinColumn(name = "profession_id", nullable = true)
 	private ProfessionModel profession;
 

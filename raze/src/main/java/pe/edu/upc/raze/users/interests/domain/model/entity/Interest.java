@@ -2,6 +2,7 @@ package pe.edu.upc.raze.users.interests.domain.model.entity;
 
 import lombok.*;
 import pe.edu.upc.raze.posts.domain.model.entity.Post;
+import pe.edu.upc.raze.security.domain.model.entity.User;
 import pe.edu.upc.raze.shared.domain.model.AuditModel;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -36,4 +37,7 @@ public class Interest extends AuditModel {
 
     @OneToMany
     private List<Post> posts;
+
+    @OneToMany
+    private List<User> users;
 }
