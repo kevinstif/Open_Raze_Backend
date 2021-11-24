@@ -14,6 +14,6 @@ public class UserResource {
     private String email;
     private String password;
     private boolean premium;
-    private String user_type;
+    private String userType;
     private Integer yearsExperience;
 }

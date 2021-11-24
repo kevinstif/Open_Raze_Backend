@@ -11,6 +11,9 @@ import pe.edu.upc.raze.security.mapping.UserMapper;
 import pe.edu.upc.raze.security.resource.UpdateUserResource;
 import pe.edu.upc.raze.security.resource.UserResource;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/users")
 public class UsersController {
@@ -21,8 +24,8 @@ public class UsersController {
     private UserMapper mapper;
 
     @GetMapping
-    public Page<UserResource> GetAllUser(Pageable pageable){
-        return mapper.modelListToPage(userService.getAll(),pageable);
+    public List<UserResource> GetAllUser(){
+        return mapper.modelListToPage(userService.getAll());
     }
 
     @GetMapping("{userId}")

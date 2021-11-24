@@ -12,6 +12,9 @@ import pe.edu.upc.raze.consultancies.bottom.resource.CreateBottomResource;
 import pe.edu.upc.raze.consultancies.bottom.resource.BottomResource;
 import pe.edu.upc.raze.consultancies.bottom.resource.UpdateBottomResource;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/bottom")
 public class BottomController {
@@ -23,8 +26,8 @@ public class BottomController {
     private BottomMapper mapper;
 
     @GetMapping
-    public Page<BottomResource> getAllFootwears(Pageable pageable) {
-        return mapper.modelListToPage(bottomService.getAll() , pageable);
+    public List<BottomResource> getAllFootwears() {
+        return mapper.modelListToPage(bottomService.getAll());
     }
 
     @GetMapping("{Id}")

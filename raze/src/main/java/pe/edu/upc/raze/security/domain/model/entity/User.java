@@ -28,7 +28,7 @@ public class User {
     @Column(length = 30, nullable = false, unique = true)
     private String username;
 
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private String imgProfile;
 
 	@Column(nullable = false)
@@ -47,7 +47,7 @@ public class User {
 	private Interest interest;
 
 	@Column(length = 30, nullable = false)
-	private String user_type;
+	private String userType;
 
 	@Column(nullable = true)
 	private Integer yearsExperience;

@@ -11,6 +11,9 @@ import pe.edu.upc.raze.consultancies.top.resource.CreateTopResource;
 import pe.edu.upc.raze.consultancies.top.resource.TopResource;
 import pe.edu.upc.raze.consultancies.top.resource.UpdateTopResource;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/top")
 public class TopController {
@@ -21,8 +24,8 @@ public class TopController {
     private TopMapper mapper;
 
     @GetMapping
-    public Page<TopResource> getAllTops(Pageable pageable) {
-        return mapper.modelListToPage(topService.getAll() , pageable);
+    public List<TopResource> getAllTops() {
+        return mapper.modelListToPage(topService.getAll());
     }
 
     @GetMapping("{Id}")

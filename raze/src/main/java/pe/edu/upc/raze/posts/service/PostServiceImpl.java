@@ -82,7 +82,7 @@ public class PostServiceImpl implements PostService {
 
         return postRepository.findById(postId).map(post ->
             postRepository.save(post.withTitle(request.getTitle())
-                    .withImage(request.getImage())
+                    .withImg(request.getImg())
                     .withDescription(request.getDescription()))
         ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, postId));
     }

@@ -10,5 +10,5 @@ public class OutfitGeneratedResource {
     private Long userId;
     private String topImage;
     private String bottomImage;
-    private String footwearImage;
+    private String footWearImage;
 }

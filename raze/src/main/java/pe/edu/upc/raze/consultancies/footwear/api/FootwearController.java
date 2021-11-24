@@ -12,7 +12,9 @@ import pe.edu.upc.raze.consultancies.footwear.resource.CreateFootwearResource;
 import pe.edu.upc.raze.consultancies.footwear.resource.FootwearResource;
 import pe.edu.upc.raze.consultancies.footwear.resource.UpdateFootwearResource;
 
+import java.util.List;
 
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/footwear")
 public class FootwearController {
@@ -23,8 +25,8 @@ public class FootwearController {
     private FootwearMapper mapper;
 
     @GetMapping
-    public Page<FootwearResource> getAllFootwears(Pageable pageable) {
-        return mapper.modelListToPage(footwearService.getAll() , pageable);
+    public List<FootwearResource> getAllFootwears() {
+        return mapper.modelListToPage(footwearService.getAll());
     }
 
     @GetMapping("{Id}")

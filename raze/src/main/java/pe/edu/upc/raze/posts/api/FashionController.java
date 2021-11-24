@@ -11,6 +11,9 @@ import pe.edu.upc.raze.posts.resource.CreateFashionResource;
 import pe.edu.upc.raze.posts.resource.FashionResource;
 import pe.edu.upc.raze.posts.resource.UpdateFashionResource;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/fashions")
 public class FashionController {
@@ -22,8 +25,8 @@ public class FashionController {
     private FashionMapper mapper;
 
     @GetMapping
-    public Page<FashionResource> getAllFashions(Pageable pageable){
-        return mapper.modelListToPage(fashionService.getAll(), pageable);
+    public List<FashionResource> getAllFashions(){
+        return mapper.modelListToPage(fashionService.getAll());
     }
 
     @GetMapping("{fashionId}")

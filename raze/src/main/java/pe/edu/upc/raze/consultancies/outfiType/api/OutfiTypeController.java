@@ -10,6 +10,10 @@ import pe.edu.upc.raze.consultancies.outfiType.resource.CreateOutfiTypeResource;
 import pe.edu.upc.raze.consultancies.outfiType.resource.OutfiTypeResource;
 import pe.edu.upc.raze.consultancies.outfiType.resource.UpdateOutfiTypeResource;
 
+import java.lang.reflect.Type;
+import java.util.List;
+
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/outfiTypes")
 public class OutfiTypeController {
@@ -22,10 +26,10 @@ public class OutfiTypeController {
     }
 
     @GetMapping
-    public Page<OutfiTypeResource> GetAllOutfiTypes(Pageable pageable){
+    public List<OutfiTypeResource> GetAllOutfiTypes(){
 
 
-        return outfiTypeMapper.modelListToPage(outfiTypeService.GetAll(),pageable);
+        return outfiTypeMapper.modelListToPage(outfiTypeService.GetAll());
     }
 
     @GetMapping("{outfiTypeId}")

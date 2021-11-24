@@ -12,7 +12,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.users.professions.resource.UpdateProfessionResource;
 
+import java.util.List;
 
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/professions")
 public class ProfessionController {
@@ -23,8 +25,8 @@ public class ProfessionController {
     private ProfessionMapper mapper;
 
     @GetMapping
-    public Page<ProfessionResource> getAllProfessions(Pageable pageable) {
-        return mapper.modelListToPage(professionService.getAll() , pageable);
+    public List<ProfessionResource> getAllProfessions() {
+        return mapper.modelListToPage(professionService.getAll());
     }
 
     @GetMapping("{Id}")

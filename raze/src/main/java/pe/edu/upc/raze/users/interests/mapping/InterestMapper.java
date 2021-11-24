@@ -20,8 +20,8 @@ public class InterestMapper implements Serializable {
         return mapper.map(model, InterestResource.class);
     }
 
-    public Page<InterestResource> modelListToPage(List<Interest> modelList, Pageable pageable){
-        return new PageImpl<>(mapper.mapList(modelList, InterestResource.class), pageable, modelList.size());
+    public List<InterestResource> modelListToPage(List<Interest> modelList){
+        return mapper.mapList(modelList, InterestResource.class);
     }
 
     public Interest toModel(CreateInterestResource resource){

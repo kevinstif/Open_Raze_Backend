@@ -20,5 +20,5 @@ public class CreateOutfitGeneratedResource {
     private String bottomImage;
 
     @Size(max = 10000)
-    private String footwearImage;
+    private String footWearImage;
 }

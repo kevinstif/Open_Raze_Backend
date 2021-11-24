@@ -16,7 +16,7 @@ public class CreatePostResource {
     private String title;
 
     @NotNull
-    private String image;
+    private String img;
 
     @NotNull
     @Size(max = 250)

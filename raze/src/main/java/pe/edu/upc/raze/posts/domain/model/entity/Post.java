@@ -33,7 +33,7 @@ public class Post extends AuditModel {
     @NotBlank
     @Lob
     @Type(type = "org.hibernate.type.TextType")
-    private String image;
+    private String img;
 
     @NotNull
     @NotBlank

@@ -22,8 +22,8 @@ public class OutfitMapper implements Serializable {
         return mapper.map(model, OutfitResource.class);
     }
 
-    public Page<OutfitResource> modelListToPage(List<Outfit> modelList, Pageable pageable) {
-        return new PageImpl<>(mapper.mapList(modelList, OutfitResource.class), pageable, modelList.size());
+    public List<OutfitResource> modelListToPage(List<Outfit> modelList) {
+        return mapper.mapList(modelList, OutfitResource.class);
     }
 
     public Outfit toModel(CreateOutfitResource resource) {

@@ -21,8 +21,8 @@ public class TopMapper {
         return mapper.map(model,TopResource.class);
     }
 
-    public Page<TopResource> modelListToPage (List<TopModel> modelList, Pageable pageable){
-        return new PageImpl<>(mapper.mapList(modelList, TopResource.class), pageable, modelList.size());
+    public List<TopResource> modelListToPage (List<TopModel> modelList){
+        return mapper.mapList(modelList, TopResource.class);
     }
 
     public TopModel toModel (CreateTopResource resource){

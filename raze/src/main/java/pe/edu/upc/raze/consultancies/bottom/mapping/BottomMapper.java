@@ -22,8 +22,8 @@ public class BottomMapper implements Serializable {
         return mapper.map(model,BottomResource.class);
     }
 
-    public Page<BottomResource> modelListToPage (List<BottomModel> modelList, Pageable pageable){
-        return new PageImpl<>(mapper.mapList(modelList, BottomResource.class), pageable, modelList.size());
+    public List<BottomResource> modelListToPage (List<BottomModel> modelList){
+        return mapper.mapList(modelList, BottomResource.class);
     }
 
     public BottomModel toModel (CreateBottomResource resource){

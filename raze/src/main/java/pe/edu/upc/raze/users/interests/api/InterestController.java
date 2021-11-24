@@ -11,6 +11,9 @@ import pe.edu.upc.raze.users.interests.resource.CreateInterestResource;
 import pe.edu.upc.raze.users.interests.resource.InterestResource;
 import pe.edu.upc.raze.users.interests.resource.UpdateInterestResource;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/interests")
 public class InterestController {
@@ -22,8 +25,8 @@ public class InterestController {
     private InterestMapper mapper;
 
     @GetMapping
-    public Page<InterestResource> getAllInterests(Pageable pageable){
-        return mapper.modelListToPage(interestService.getAll(), pageable);
+    public List<InterestResource> getAllInterests(){
+        return mapper.modelListToPage(interestService.getAll());
     }
 
     @GetMapping("{interestId}")

@@ -10,6 +10,9 @@ import pe.edu.upc.raze.consultancies.outfits.resource.CreateOutfitResource;
 import pe.edu.upc.raze.consultancies.outfits.resource.OutfitResource;
 import pe.edu.upc.raze.consultancies.outfits.resource.UpdateOutfitResource;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/outfits")
 public class OutfitController {
@@ -22,10 +25,10 @@ public class OutfitController {
     }
 
     @GetMapping
-    public Page<OutfitResource> GetAllOutfits(Pageable pageable){
+    public List<OutfitResource> GetAllOutfits(){
 
 
-        return outfitMapper.modelListToPage(outfitService.GetAll(),pageable);
+        return outfitMapper.modelListToPage(outfitService.GetAll());
     }
 
     @GetMapping("{outfitId}")

@@ -16,8 +16,6 @@ public class UpdateUserResource {
     @NotBlank
     private String name;
 
-    @NotNull
-    @NotBlank
     private String imgProfile;
 
     @NotNull

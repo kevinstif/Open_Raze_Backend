@@ -32,6 +32,6 @@ public class OutfitGeneratedModel extends AuditModel {
     private String bottomImage;
 
     @Size(max = 10000)
-    private String footwearImage;
+    private String footWearImage;
 
 }

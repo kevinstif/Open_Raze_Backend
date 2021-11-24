@@ -12,6 +12,9 @@ import pe.edu.upc.raze.consultancies.outfitgenerated.resource.CreateOutfitGenera
 import pe.edu.upc.raze.consultancies.outfitgenerated.resource.OutfitGeneratedResource;
 import pe.edu.upc.raze.consultancies.outfitgenerated.resource.UpdateOutfitGeneratedResource;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/v1/outfitgenerated")
 public class OutfitGeneratedController {
@@ -23,8 +26,8 @@ public class OutfitGeneratedController {
     private OutfitGeneratedMapper mapper;
 
     @GetMapping
-    public Page<OutfitGeneratedResource> getAllOutfitGenerated(Pageable pageable) {
-        return mapper.modelListToPage(outfitgeneratedService.getAll() , pageable);
+    public List<OutfitGeneratedResource> getAllOutfitGenerated() {
+        return mapper.modelListToPage(outfitgeneratedService.getAll());
     }
 
     @GetMapping("{Id}")

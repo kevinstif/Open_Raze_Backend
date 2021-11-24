@@ -22,8 +22,8 @@ public class RegisterRequest {
     @NotBlank
     private String username;
 
-    @NotNull
-    @NotBlank
+
+    @Null
     private String imgProfile;
 
     @NotNull
@@ -41,11 +41,12 @@ public class RegisterRequest {
     @NotBlank
     private String password;
 
+    @Null
     protected boolean premium;
 
     @NotNull
     @NotBlank
-    private String user_type;
+    private String userType;
 
     @Null
     private Integer yearsExperience;

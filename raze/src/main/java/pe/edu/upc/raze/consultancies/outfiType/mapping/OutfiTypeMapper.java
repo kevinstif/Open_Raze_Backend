@@ -22,8 +22,8 @@ public class OutfiTypeMapper implements Serializable {
         return mapper.map(model, OutfiTypeResource.class);
     }
 
-    public Page<OutfiTypeResource> modelListToPage(List<OutfiType> modelList, Pageable pageable) {
-        return new PageImpl<>(mapper.mapList(modelList, OutfiTypeResource.class), pageable, modelList.size());
+    public List<OutfiTypeResource> modelListToPage(List<OutfiType> modelList) {
+        return mapper.mapList(modelList, OutfiTypeResource.class);
     }
 
     public OutfiType toModel(CreateOutfiTypeResource resource) {

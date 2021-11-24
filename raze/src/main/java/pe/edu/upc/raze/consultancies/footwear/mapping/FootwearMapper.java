@@ -22,8 +22,8 @@ public class FootwearMapper implements Serializable {
         return mapper.map(model,FootwearResource.class);
     }
 
-    public Page<FootwearResource> modelListToPage (List<FootwearModel> modelList, Pageable pageable){
-        return new PageImpl<>(mapper.mapList(modelList, FootwearResource.class), pageable, modelList.size());
+    public List<FootwearResource> modelListToPage (List<FootwearModel> modelList){
+        return mapper.mapList(modelList, FootwearResource.class);
     }
 
     public FootwearModel toModel (CreateFootwearResource resource){

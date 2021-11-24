@@ -20,8 +20,8 @@ public class FashionMapper implements Serializable {
         return mapper.map(model, FashionResource.class);
     }
 
-    public Page<FashionResource> modelListToPage(List<Fashion> modelList, Pageable pageable){
-        return new PageImpl<>(mapper.mapList(modelList, FashionResource.class), pageable, modelList.size());
+    public List<FashionResource> modelListToPage(List<Fashion> modelList){
+        return mapper.mapList(modelList, FashionResource.class);
     }
 
     public Fashion toModel(CreateFashionResource resource){

@@ -10,6 +10,9 @@ import pe.edu.upc.raze.posts.resource.CreatePostResource;
 import pe.edu.upc.raze.posts.resource.PostResource;
 import pe.edu.upc.raze.posts.resource.UpdatePostResource;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("api/v1/users/{userId}/posts")
 public class UserPostsController {
@@ -22,8 +25,8 @@ public class UserPostsController {
     }
 
     @GetMapping
-    public Page<PostResource> getAllPostsByUserId(@PathVariable Long userId, Pageable pageable){
-        return mapper.modelListToPage(postService.getAllByUserId(userId), pageable);
+    public List<PostResource> getAllPostsByUserId(@PathVariable Long userId){
+        return mapper.modelListToPage(postService.getAllByUserId(userId));
     }
 
     @PostMapping

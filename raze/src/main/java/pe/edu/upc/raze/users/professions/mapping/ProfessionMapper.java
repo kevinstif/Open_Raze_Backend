@@ -23,8 +23,8 @@ public class ProfessionMapper implements Serializable {
         return mapper.map(model, ProfessionResource.class);
     }
 
-    public Page<ProfessionResource> modelListToPage(List<ProfessionModel> modelList, Pageable pageable) {
-        return new PageImpl<>(mapper.mapList(modelList, ProfessionResource.class), pageable, modelList.size());
+    public List<ProfessionResource> modelListToPage(List<ProfessionModel> modelList) {
+        return mapper.mapList(modelList, ProfessionResource.class);
     }
 
     public ProfessionModel toModel(CreateProfessionResource resource) { return mapper.map(resource, ProfessionModel.class); }
