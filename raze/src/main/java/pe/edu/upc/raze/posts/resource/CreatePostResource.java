@@ -23,15 +23,5 @@ public class CreatePostResource {
     private String description;
 
     @NotNull
-    @NotEmpty
-    private Float rate;
-
-    @NotNull
-    private Integer numberOfRates;
-
-    @NotNull
-    private Long interestId;
-
-    @NotNull
-    private Long fashionId;
+    private Long userId;
 }

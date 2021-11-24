@@ -23,17 +23,5 @@ public class UpdatePostResource {
     private String description;
 
     @NotNull
-    private Float rate;
-
-    @NotNull
-    private Integer numberOfRates;
-
-    @NotNull
     private Long userId;
-
-    @NotNull
-    private Long interestId;
-
-    @NotNull
-    private Long fashionId;
 }

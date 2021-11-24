@@ -10,6 +10,5 @@ public class PostResource {
     private String title;
     private String image;
     private String description;
-    private Float rate;
-    private Integer numberOfRates;
+    private Long userId;
 }

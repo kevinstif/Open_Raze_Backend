@@ -12,7 +12,7 @@ public interface PostService {
     Page<Post> getAll(Pageable pageable);
     List<Post> getAllByUserId(Long userId);
     Post getById(Long postId);
-    Post create(Long userId, Post request, Long interestId, Long fashionId);
+    Post create(Long userId, Post request);
     Post update(Long userId, Long postId, Post request);
     ResponseEntity<?> delete(Long userId, Long postId);
     Post getByIdAndUserId(Long userId, Long postId);

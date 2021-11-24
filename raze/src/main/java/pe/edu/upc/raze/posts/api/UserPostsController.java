@@ -29,7 +29,7 @@ public class UserPostsController {
     @PostMapping
     public PostResource createPost(@PathVariable Long userId,
                                    @RequestBody CreatePostResource request){
-        return mapper.toResource(postService.create(userId, mapper.toModel(request), request.getInterestId(), request.getFashionId()));
+        return mapper.toResource(postService.create(userId, mapper.toModel(request)));
     }
 
     @PutMapping("{postId}")
