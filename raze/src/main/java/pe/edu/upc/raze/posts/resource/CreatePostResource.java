@@ -23,8 +23,5 @@ public class CreatePostResource {
     private String description;
 
     @NotNull
-    private Long interestId;
-
-    @NotNull
-    private Long fashionId;
+    private Long userId;
 }

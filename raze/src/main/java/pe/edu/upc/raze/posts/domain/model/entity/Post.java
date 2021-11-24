@@ -40,24 +40,7 @@ public class Post extends AuditModel {
     @Size(max = 250)
     private String description;
 
-    @NotNull
-    private Float rate;
-
-    @NotNull
-    private Integer numberOfRates;
-
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = true)
     private User user = null;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "interest_id", nullable = false)
-    private Interest interest;
-
-    @ManyToOne
-    @JoinColumn(name = "fashion_id", nullable = false)
-    private Fashion fashion;
-
-    @OneToMany
-    private List<Comment> comments;
 }

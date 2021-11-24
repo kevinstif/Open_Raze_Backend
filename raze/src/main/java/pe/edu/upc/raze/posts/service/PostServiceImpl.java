@@ -57,20 +57,10 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Post create(Long userId, Post request, Long interestId, Long fashionId) {
+    public Post create(Long userId, Post request) {
         Set<ConstraintViolation<Post>> violations = validator.validate(request);
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
-
-        fashionRepository.findById(fashionId).map(fashion -> {
-            request.setFashion(fashion);
-            return request;
-        }).orElseThrow(() -> new ResourceNotFoundException("Fashion", fashionId));
-
-        interestRepository.findById(interestId).map(interest -> {
-            request.setInterest(interest);
-            return request;
-        }).orElseThrow(() -> new ResourceNotFoundException("Interest", interestId));
 
         return userRepository.findById(userId).map(userAdvised -> {
             request.setUser(userAdvised);
@@ -93,9 +83,7 @@ public class PostServiceImpl implements PostService {
         return postRepository.findById(postId).map(post ->
             postRepository.save(post.withTitle(request.getTitle())
                     .withImage(request.getImage())
-                    .withDescription(request.getDescription())
-                    .withRate(request.getRate())
-                    .withNumberOfRates(request.getNumberOfRates()))
+                    .withDescription(request.getDescription()))
         ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, postId));
     }
 
