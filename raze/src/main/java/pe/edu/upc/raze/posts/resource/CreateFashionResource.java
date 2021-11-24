@@ -11,5 +11,5 @@ import javax.validation.constraints.Size;
 public class CreateFashionResource {
     @NotNull
     @Size(max = 20)
-    private String title;
+    private String name;
 }

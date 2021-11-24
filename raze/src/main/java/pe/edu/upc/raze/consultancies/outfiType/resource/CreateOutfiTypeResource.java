@@ -12,11 +12,11 @@ public class CreateOutfiTypeResource {
 
     @NotNull
     @Size(max = 20)
-    private String name;
+    private String title;
 
     @NotNull
     @Size(max = 250)
-    private String url;
+    private String urlToImage;
 
     @NotNull
     private String description;

@@ -26,12 +26,12 @@ public class OutfiType extends AuditModel{
     @NotBlank
     @Size(max = 20)
     @Column(unique = true)
-    private String name;
+    private String title;
 
     @NotNull
     @NotBlank
     @Size(max=250)
-    private String url;
+    private String urlToImage;
 
     @NotNull
     @NotBlank

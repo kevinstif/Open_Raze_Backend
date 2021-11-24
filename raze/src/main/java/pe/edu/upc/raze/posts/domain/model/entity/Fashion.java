@@ -24,7 +24,7 @@ public class Fashion extends AuditModel {
     @NotBlank
     @Size(max = 20)
     @Column(unique = true)
-    private String title;
+    private String name;
 
     @OneToMany
     private List<Post> posts;

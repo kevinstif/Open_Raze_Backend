@@ -57,9 +57,9 @@ public class OutfiTypeServiceImpl implements OutfiTypeService {
 
         return outfiTypeRepository.findById(OutfiTypeId)
                 .map(outfiType->outfiTypeRepository.save(
-                        outfiType.withName(request.getName())
+                        outfiType.withTitle(request.getTitle())
                                 .withDescription(request.getDescription())
-                                .withUrl(request.getUrl())
+                                .withUrlToImage(request.getUrlToImage())
                 )).orElseThrow(()->new ResourceNotFoundException(ENTITY,OutfiTypeId));
     }
 

@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class FashionResource {
     private Long id;
-    private String title;
+    private String name;
 }

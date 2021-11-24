@@ -59,7 +59,7 @@ public class OutfitServiceImpl implements OutfitService {
                 .map(outfit->outfitRepository.save(
                         outfit.withName(request.getName())
                                 .withDescription(request.getDescription())
-                                .withUrl(request.getUrl())
+                                .withImg(request.getImg())
                 )).orElseThrow(()->new ResourceNotFoundException(ENTITY,OutfitId));
     }
 

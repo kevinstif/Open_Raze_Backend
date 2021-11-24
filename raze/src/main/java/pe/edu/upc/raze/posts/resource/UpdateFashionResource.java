@@ -13,5 +13,5 @@ public class UpdateFashionResource {
 
     @NotNull
     @Size(max = 20)
-    private String title;
+    private String name;
 }

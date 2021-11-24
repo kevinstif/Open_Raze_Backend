@@ -18,7 +18,7 @@ public class UpdateOutfitResource {
 
     @NotNull
     @Size(max = 250)
-    private String url;
+    private String img;
 
     @NotNull
     private String description;

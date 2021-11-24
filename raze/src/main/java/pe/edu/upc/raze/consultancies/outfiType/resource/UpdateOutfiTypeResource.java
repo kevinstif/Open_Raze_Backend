@@ -14,11 +14,11 @@ public class UpdateOutfiTypeResource {
 
     @NotNull
     @Size(max = 30)
-    private String name;
+    private String title;
 
     @NotNull
     @Size(max = 250)
-    private String url;
+    private String urlToImage;
 
     @NotNull
     private String description;

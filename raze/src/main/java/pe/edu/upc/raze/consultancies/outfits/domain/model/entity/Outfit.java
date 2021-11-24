@@ -30,7 +30,7 @@ public class Outfit extends AuditModel{
     @NotNull
     @NotBlank
     @Size(max=250)
-    private String url;
+    private String img;
 
     @NotNull
     @NotBlank

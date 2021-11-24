@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class OutfiTypeResource {
     private Long id;
-    private String name;
-    private String url;
+    private String title;
+    private String urlToImage;
     private String description;
 }

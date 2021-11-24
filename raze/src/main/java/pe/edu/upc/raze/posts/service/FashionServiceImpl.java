@@ -53,7 +53,7 @@ public class FashionServiceImpl implements FashionService {
         }
         return fashionRepository.findById(fashionId).map(fashion ->
                 fashionRepository.save(
-                        fashion.withTitle(request.getTitle())
+                        fashion.withName(request.getName())
                 )).orElseThrow(() -> new ResourceNotFoundException(ENTITY, fashionId));
     }
 

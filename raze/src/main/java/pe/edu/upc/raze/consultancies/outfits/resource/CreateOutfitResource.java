@@ -16,7 +16,7 @@ public class CreateOutfitResource {
 
     @NotNull
     @Size(max = 250)
-    private String url;
+    private String img;
 
     @NotNull
     private String description;
