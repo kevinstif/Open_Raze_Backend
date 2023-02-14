@@ -1,8 +1,6 @@
 package pe.edu.upc.raze.users.interests.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.users.interests.domain.service.InterestService;
@@ -13,7 +11,8 @@ import pe.edu.upc.raze.users.interests.resource.UpdateInterestResource;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+        RequestMethod.DELETE })
 @RestController
 @RequestMapping("/api/v1/interests")
 public class InterestController {
@@ -25,7 +24,7 @@ public class InterestController {
     private InterestMapper mapper;
 
     @GetMapping
-    public List<InterestResource> getAllInterests(){
+    public List<InterestResource> getAllInterests() {
         return mapper.modelListToPage(interestService.getAll());
     }
 
@@ -35,17 +34,17 @@ public class InterestController {
     }
 
     @PostMapping
-    public InterestResource createInterest(@RequestBody CreateInterestResource request){
+    public InterestResource createInterest(@RequestBody CreateInterestResource request) {
         return mapper.toResource(interestService.create(mapper.toModel(request)));
     }
 
     @PutMapping("{interestId}")
-    public InterestResource updateInterest(@PathVariable Long interestId, @RequestBody UpdateInterestResource request){
+    public InterestResource updateInterest(@PathVariable Long interestId, @RequestBody UpdateInterestResource request) {
         return mapper.toResource(interestService.update(interestId, mapper.toModel(request)));
     }
 
     @DeleteMapping("{interestId}")
-    public ResponseEntity<?> deletePost(@PathVariable Long interestId){
+    public ResponseEntity<?> deletePost(@PathVariable Long interestId) {
         return interestService.delete(interestId);
     }
 }

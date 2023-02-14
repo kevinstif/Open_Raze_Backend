@@ -1,6 +1,5 @@
 package pe.edu.upc.raze.users.professions.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -63,11 +62,10 @@ public class ProfessionServiceImpl implements ProfessionService {
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
 
-        return professionRepository.findById(professionId).map(profession ->
-            professionRepository.save(
-                    profession.withName(request.getName())
-                               .withDescription(request.getDescription()))
-        ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, professionId));
+        return professionRepository.findById(professionId).map(profession -> professionRepository.save(
+                profession.withName(request.getName())
+                        .withDescription(request.getDescription())))
+                .orElseThrow(() -> new ResourceNotFoundException(ENTITY, professionId));
     }
 
     @Override

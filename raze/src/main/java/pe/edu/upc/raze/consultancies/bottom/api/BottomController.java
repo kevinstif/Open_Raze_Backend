@@ -1,9 +1,6 @@
 package pe.edu.upc.raze.consultancies.bottom.api;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.consultancies.bottom.domain.service.BottomService;
@@ -14,7 +11,8 @@ import pe.edu.upc.raze.consultancies.bottom.resource.UpdateBottomResource;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+        RequestMethod.DELETE })
 @RestController
 @RequestMapping("/api/v1/bottom")
 public class BottomController {
@@ -46,7 +44,7 @@ public class BottomController {
     }
 
     @DeleteMapping("{Id}")
-    public ResponseEntity<?> deleteBottom(@PathVariable Long Id){
-        return bottomService.delete(Id) ;
+    public ResponseEntity<?> deleteBottom(@PathVariable Long Id) {
+        return bottomService.delete(Id);
     }
 }

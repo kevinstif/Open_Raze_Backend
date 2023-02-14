@@ -1,9 +1,6 @@
 package pe.edu.upc.raze.consultancies.outfitgenerated.api;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.consultancies.outfitgenerated.domain.service.OutfitGeneratedService;
@@ -14,7 +11,8 @@ import pe.edu.upc.raze.consultancies.outfitgenerated.resource.UpdateOutfitGenera
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+        RequestMethod.DELETE })
 @RestController
 @RequestMapping("/api/v1/outfitgenerated")
 public class OutfitGeneratedController {
@@ -41,13 +39,14 @@ public class OutfitGeneratedController {
     }
 
     @PutMapping("{Id}")
-    public OutfitGeneratedResource updateOutfitGenerated(@PathVariable Long Id, @RequestBody UpdateOutfitGeneratedResource request) {
+    public OutfitGeneratedResource updateOutfitGenerated(@PathVariable Long Id,
+            @RequestBody UpdateOutfitGeneratedResource request) {
         return mapper.toResource(outfitgeneratedService.update(Id, mapper.toModel(request)));
     }
 
     @DeleteMapping("{Id}")
-    public ResponseEntity<?> deleteTop(@PathVariable Long Id){
-        return outfitgeneratedService.delete(Id) ;
+    public ResponseEntity<?> deleteTop(@PathVariable Long Id) {
+        return outfitgeneratedService.delete(Id);
     }
 
 }

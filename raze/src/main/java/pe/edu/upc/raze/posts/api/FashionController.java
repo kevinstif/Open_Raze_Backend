@@ -1,8 +1,6 @@
 package pe.edu.upc.raze.posts.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.posts.domain.service.FashionService;
@@ -13,7 +11,8 @@ import pe.edu.upc.raze.posts.resource.UpdateFashionResource;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+        RequestMethod.DELETE })
 @RestController
 @RequestMapping("/api/v1/fashions")
 public class FashionController {
@@ -25,7 +24,7 @@ public class FashionController {
     private FashionMapper mapper;
 
     @GetMapping
-    public List<FashionResource> getAllFashions(){
+    public List<FashionResource> getAllFashions() {
         return mapper.modelListToPage(fashionService.getAll());
     }
 
@@ -34,20 +33,18 @@ public class FashionController {
         return mapper.toResource(fashionService.getById(fashionId));
     }
 
-
-
     @PostMapping
-    public FashionResource createFashion(@RequestBody CreateFashionResource request){
+    public FashionResource createFashion(@RequestBody CreateFashionResource request) {
         return mapper.toResource(fashionService.create(mapper.toModel(request)));
     }
 
     @PutMapping("{fashionId}")
-    public FashionResource updateFashion(@PathVariable Long fashionId, @RequestBody UpdateFashionResource request){
+    public FashionResource updateFashion(@PathVariable Long fashionId, @RequestBody UpdateFashionResource request) {
         return mapper.toResource(fashionService.update(fashionId, mapper.toModel(request)));
     }
 
     @DeleteMapping("{fashionId}")
-    public ResponseEntity<?> deletePost(@PathVariable Long fashionId){
+    public ResponseEntity<?> deletePost(@PathVariable Long fashionId) {
         return fashionService.delete(fashionId);
     }
 }

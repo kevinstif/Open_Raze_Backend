@@ -1,9 +1,6 @@
 package pe.edu.upc.raze.consultancies.outfits.mapping;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import pe.edu.upc.raze.consultancies.outfits.domain.model.entity.Outfit;
 import pe.edu.upc.raze.consultancies.outfits.resource.CreateOutfitResource;
 import pe.edu.upc.raze.consultancies.outfits.resource.OutfitResource;

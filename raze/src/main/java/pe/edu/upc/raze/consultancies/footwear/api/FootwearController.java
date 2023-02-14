@@ -1,9 +1,6 @@
 package pe.edu.upc.raze.consultancies.footwear.api;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.consultancies.footwear.domain.service.FootwearService;
@@ -14,7 +11,8 @@ import pe.edu.upc.raze.consultancies.footwear.resource.UpdateFootwearResource;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+        RequestMethod.DELETE })
 @RestController
 @RequestMapping("/api/v1/footwear")
 public class FootwearController {
@@ -45,8 +43,8 @@ public class FootwearController {
     }
 
     @DeleteMapping("{Id}")
-    public ResponseEntity<?> deleteFootwear(@PathVariable Long Id){
-        return footwearService.delete(Id) ;
+    public ResponseEntity<?> deleteFootwear(@PathVariable Long Id) {
+        return footwearService.delete(Id);
     }
 
 }

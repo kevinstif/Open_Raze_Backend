@@ -9,7 +9,6 @@ import pe.edu.upc.raze.consultancies.outfitgenerated.domain.persistence.OutfitGe
 import pe.edu.upc.raze.consultancies.outfitgenerated.domain.service.OutfitGeneratedService;
 import pe.edu.upc.raze.shared.exception.ResourceNotFoundException;
 import pe.edu.upc.raze.shared.exception.ResourceValidationException;
-import pe.edu.upc.raze.users.professions.domain.model.entity.ProfessionModel;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
@@ -18,16 +17,15 @@ import java.util.Set;
 
 @Service
 public class OutfitGeneratedServiceImpl implements OutfitGeneratedService {
-    private static final String ENTITY ="OutfitGenerated";
+    private static final String ENTITY = "OutfitGenerated";
 
     private final OutfitGeneratedRepository outfitgeneratedRepository;
     private final Validator validator;
 
-    public OutfitGeneratedServiceImpl(OutfitGeneratedRepository outfitgeneratedRepository, Validator validator){
+    public OutfitGeneratedServiceImpl(OutfitGeneratedRepository outfitgeneratedRepository, Validator validator) {
         this.outfitgeneratedRepository = outfitgeneratedRepository;
         this.validator = validator;
     }
-
 
     @Override
     public List<OutfitGeneratedModel> getAll() {
@@ -42,7 +40,7 @@ public class OutfitGeneratedServiceImpl implements OutfitGeneratedService {
     @Override
     public OutfitGeneratedModel getById(Long outfitgeneratedId) {
         return outfitgeneratedRepository.findById(outfitgeneratedId)
-                .orElseThrow( ()-> new ResourceNotFoundException(ENTITY, outfitgeneratedId));
+                .orElseThrow(() -> new ResourceNotFoundException(ENTITY, outfitgeneratedId));
     }
 
     @Override
@@ -50,7 +48,7 @@ public class OutfitGeneratedServiceImpl implements OutfitGeneratedService {
         Set<ConstraintViolation<OutfitGeneratedModel>> violations = validator.validate(outfitgenerated);
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
-        return outfitgeneratedRepository.save(outfitgenerated) ;
+        return outfitgeneratedRepository.save(outfitgenerated);
     }
 
     @Override
@@ -61,11 +59,10 @@ public class OutfitGeneratedServiceImpl implements OutfitGeneratedService {
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
 
-        return outfitgeneratedRepository.findById(outfitgeneratedId).map(profession ->
-                outfitgeneratedRepository.save(
-                        profession.withTopImage(request.getTopImage())
-                                .withBottomImage(request.getBottomImage()))
-        ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, outfitgeneratedId));
+        return outfitgeneratedRepository.findById(outfitgeneratedId).map(profession -> outfitgeneratedRepository.save(
+                profession.withTopImage(request.getTopImage())
+                        .withBottomImage(request.getBottomImage())))
+                .orElseThrow(() -> new ResourceNotFoundException(ENTITY, outfitgeneratedId));
 
     }
 
@@ -74,6 +71,6 @@ public class OutfitGeneratedServiceImpl implements OutfitGeneratedService {
         return outfitgeneratedRepository.findById(outfitgeneratedId).map(respuesta -> {
             outfitgeneratedRepository.delete(respuesta);
             return ResponseEntity.ok().build();
-        } ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, outfitgeneratedId));
+        }).orElseThrow(() -> new ResourceNotFoundException(ENTITY, outfitgeneratedId));
     }
 }

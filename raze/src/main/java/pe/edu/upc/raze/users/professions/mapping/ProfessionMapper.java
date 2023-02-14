@@ -1,8 +1,6 @@
 package pe.edu.upc.raze.users.professions.mapping;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import pe.edu.upc.raze.shared.mapping.EnhancedModelMapper;
 import pe.edu.upc.raze.users.professions.domain.model.entity.ProfessionModel;
 import pe.edu.upc.raze.users.professions.resource.CreateProfessionResource;
@@ -11,7 +9,6 @@ import pe.edu.upc.raze.users.professions.resource.UpdateProfessionResource;
 
 import java.io.Serializable;
 import java.util.List;
-
 
 public class ProfessionMapper implements Serializable {
 
@@ -27,8 +24,12 @@ public class ProfessionMapper implements Serializable {
         return mapper.mapList(modelList, ProfessionResource.class);
     }
 
-    public ProfessionModel toModel(CreateProfessionResource resource) { return mapper.map(resource, ProfessionModel.class); }
+    public ProfessionModel toModel(CreateProfessionResource resource) {
+        return mapper.map(resource, ProfessionModel.class);
+    }
 
-    public ProfessionModel toModel(UpdateProfessionResource resource) { return mapper.map(resource, ProfessionModel.class); }
+    public ProfessionModel toModel(UpdateProfessionResource resource) {
+        return mapper.map(resource, ProfessionModel.class);
+    }
 
 }

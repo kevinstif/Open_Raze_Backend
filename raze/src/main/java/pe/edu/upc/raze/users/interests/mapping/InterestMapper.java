@@ -1,9 +1,6 @@
 package pe.edu.upc.raze.users.interests.mapping;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import pe.edu.upc.raze.users.interests.domain.model.entity.Interest;
 import pe.edu.upc.raze.users.interests.resource.CreateInterestResource;
 import pe.edu.upc.raze.users.interests.resource.InterestResource;
@@ -20,14 +17,15 @@ public class InterestMapper implements Serializable {
         return mapper.map(model, InterestResource.class);
     }
 
-    public List<InterestResource> modelListToPage(List<Interest> modelList){
+    public List<InterestResource> modelListToPage(List<Interest> modelList) {
         return mapper.mapList(modelList, InterestResource.class);
     }
 
-    public Interest toModel(CreateInterestResource resource){
+    public Interest toModel(CreateInterestResource resource) {
         return mapper.map(resource, Interest.class);
     }
-    public Interest toModel(UpdateInterestResource resource){
+
+    public Interest toModel(UpdateInterestResource resource) {
         return mapper.map(resource, Interest.class);
     }
 }

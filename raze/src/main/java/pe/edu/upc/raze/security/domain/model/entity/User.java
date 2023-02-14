@@ -6,7 +6,6 @@ import pe.edu.upc.raze.users.interests.domain.model.entity.Interest;
 import pe.edu.upc.raze.users.professions.domain.model.entity.ProfessionModel;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -19,14 +18,14 @@ import java.util.List;
 public class User {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	@Column(length = 40, nullable = false)
 	private String name;
 
-    @Column(length = 30, nullable = false, unique = true)
-    private String username;
+	@Column(length = 30, nullable = false, unique = true)
+	private String username;
 
 	@Column(nullable = true)
 	private String imgProfile;
@@ -37,10 +36,10 @@ public class User {
 	@Column(length = 60, nullable = false, unique = true)
 	private String email;
 
-    @Column(length = 60, nullable = false)
-    private String password;
+	@Column(length = 60, nullable = false)
+	private String password;
 
-    private boolean premium;
+	private boolean premium;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "interest_id", nullable = false)
@@ -58,5 +57,5 @@ public class User {
 
 	@OneToMany
 	private List<Post> posts;
-    //private List<Authority> authorities;
+	// private List<Authority> authorities;
 }

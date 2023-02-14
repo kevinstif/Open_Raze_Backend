@@ -1,9 +1,6 @@
 package pe.edu.upc.raze.consultancies.outfiType.mapping;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import pe.edu.upc.raze.consultancies.outfiType.domain.model.entity.OutfiType;
 import pe.edu.upc.raze.consultancies.outfiType.resource.CreateOutfiTypeResource;
 import pe.edu.upc.raze.consultancies.outfiType.resource.OutfiTypeResource;

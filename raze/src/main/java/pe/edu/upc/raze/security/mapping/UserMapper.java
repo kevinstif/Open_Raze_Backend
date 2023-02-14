@@ -1,9 +1,6 @@
 package pe.edu.upc.raze.security.mapping;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import pe.edu.upc.raze.security.domain.model.entity.User;
 import pe.edu.upc.raze.security.domain.service.communication.RegisterRequest;
 import pe.edu.upc.raze.security.resource.UpdateUserResource;

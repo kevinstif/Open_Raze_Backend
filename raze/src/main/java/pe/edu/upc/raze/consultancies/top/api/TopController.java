@@ -1,8 +1,6 @@
 package pe.edu.upc.raze.consultancies.top.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.raze.consultancies.top.domain.service.TopService;
@@ -13,7 +11,8 @@ import pe.edu.upc.raze.consultancies.top.resource.UpdateTopResource;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+        RequestMethod.DELETE })
 @RestController
 @RequestMapping("/api/v1/top")
 public class TopController {
@@ -44,9 +43,8 @@ public class TopController {
     }
 
     @DeleteMapping("{Id}")
-    public ResponseEntity<?> deleteTop(@PathVariable Long Id){
-        return topService.delete(Id) ;
+    public ResponseEntity<?> deleteTop(@PathVariable Long Id) {
+        return topService.delete(Id);
     }
-
 
 }

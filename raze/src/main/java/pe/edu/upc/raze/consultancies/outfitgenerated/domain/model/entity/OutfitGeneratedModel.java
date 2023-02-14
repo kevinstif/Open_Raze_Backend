@@ -2,10 +2,8 @@ package pe.edu.upc.raze.consultancies.outfitgenerated.domain.model.entity;
 
 import lombok.*;
 import pe.edu.upc.raze.shared.domain.model.AuditModel;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -19,7 +17,7 @@ import javax.validation.constraints.Size;
 
 public class OutfitGeneratedModel extends AuditModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull

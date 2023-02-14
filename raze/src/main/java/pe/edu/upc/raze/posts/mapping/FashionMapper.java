@@ -1,9 +1,6 @@
 package pe.edu.upc.raze.posts.mapping;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
 import pe.edu.upc.raze.posts.domain.model.entity.Fashion;
 import pe.edu.upc.raze.posts.resource.CreateFashionResource;
 import pe.edu.upc.raze.posts.resource.FashionResource;
@@ -20,15 +17,15 @@ public class FashionMapper implements Serializable {
         return mapper.map(model, FashionResource.class);
     }
 
-    public List<FashionResource> modelListToPage(List<Fashion> modelList){
+    public List<FashionResource> modelListToPage(List<Fashion> modelList) {
         return mapper.mapList(modelList, FashionResource.class);
     }
 
-    public Fashion toModel(CreateFashionResource resource){
+    public Fashion toModel(CreateFashionResource resource) {
         return mapper.map(resource, Fashion.class);
     }
 
-    public Fashion toModel(UpdateFashionResource resource){
+    public Fashion toModel(UpdateFashionResource resource) {
         return mapper.map(resource, Fashion.class);
     }
 }

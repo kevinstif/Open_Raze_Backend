@@ -5,13 +5,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.raze.posts.domain.model.entity.Post;
-import pe.edu.upc.raze.posts.domain.persistence.FashionRepository;
 import pe.edu.upc.raze.posts.domain.persistence.PostRepository;
 import pe.edu.upc.raze.posts.domain.service.PostService;
 import pe.edu.upc.raze.security.domain.persistence.UserRepository;
 import pe.edu.upc.raze.shared.exception.ResourceNotFoundException;
 import pe.edu.upc.raze.shared.exception.ResourceValidationException;
-import pe.edu.upc.raze.users.interests.domain.persistence.InterestRepository;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.util.List;
@@ -22,16 +20,11 @@ public class PostServiceImpl implements PostService {
     private static final String ENTITY = "Post";
     private final PostRepository postRepository;
     private final UserRepository userRepository;
-    private final FashionRepository fashionRepository;
-    private final InterestRepository interestRepository;
     private final Validator validator;
 
-    public PostServiceImpl(PostRepository postRepository, UserRepository userRepository, FashionRepository fashionRepository,
-                           InterestRepository interestRepository, Validator validator) {
+    public PostServiceImpl(PostRepository postRepository, UserRepository userRepository, Validator validator) {
         this.postRepository = postRepository;
         this.userRepository = userRepository;
-        this.fashionRepository = fashionRepository;
-        this.interestRepository = interestRepository;
         this.validator = validator;
     }
 
@@ -74,17 +67,16 @@ public class PostServiceImpl implements PostService {
         if (!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
 
-        if(!userRepository.existsById(userId))
+        if (!userRepository.existsById(userId))
             throw new ResourceNotFoundException("User", userId);
 
-        if(!postRepository.existsById(postId))
+        if (!postRepository.existsById(postId))
             throw new ResourceNotFoundException("Post", postId);
 
-        return postRepository.findById(postId).map(post ->
-            postRepository.save(post.withTitle(request.getTitle())
-                    .withImg(request.getImg())
-                    .withDescription(request.getDescription()))
-        ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, postId));
+        return postRepository.findById(postId).map(post -> postRepository.save(post.withTitle(request.getTitle())
+                .withImg(request.getImg())
+                .withDescription(request.getDescription())))
+                .orElseThrow(() -> new ResourceNotFoundException(ENTITY, postId));
     }
 
     @Override
